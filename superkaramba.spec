@@ -130,7 +130,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/themes/szPieG/script
 %{_datadir}/themes/szPieG/*.*
 %{_datadir}/themes/szPieG/Pics/*.*
-%attr(755,root,root) %{_datadir}/themes/szPieG/*
+%attr(755,root,root) %{_datadir}/themes/szPieG/script/*
 
 %dir %{_datadir}/themes/tuxbar
 %dir %{_datadir}/themes/tuxbar/pics
