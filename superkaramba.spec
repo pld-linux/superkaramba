@@ -2,7 +2,7 @@ Summary:	Little interactive widgets on KDE desktop
 Summary(pl):	Ma³e interaktywne widgety na pulpicie KDE
 Name:		superkaramba
 Version:	0.33
-Release:	1.3
+Release:	1.4
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
@@ -27,6 +27,9 @@ Source4:	OSXDocker.tar.bz2
 Source5:	http://www.kde-look.org/content/files/6186-PNM4.tar.gz
 # Source5-md5:	ba311930d90daf6b4c591d25d837a9b8
 Source6:	6186-PNM3-themefile
+# TubeClock theme
+Source7:	TubeClock.tar.bz2
+# Source7-md5:	ced8e1f6772bc0ed224971d3bbd9ec4e
 Patch0:		%{name}-src-configfix.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-gcc34.patch
@@ -119,8 +122,21 @@ Polish News Module 4 theme for %{name}.
 %description theme-PNM4 -l pl
 Motyw Polish News Module 4 dla widgetu %{name}.
 
+%package theme-TubeClock
+Summary:	TubeClock theme for %{name}
+Summary(pl):	Motyw zegara lampowego dla widgetu %{name}
+Group:		X11/Applications
+Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-scripts = %{version}-%{release}
+
+%description theme-TubeClock
+Tube clock theme for %{name}.
+
+%description theme-TubeClock -l pl
+Motyw zegara lampowego dla widgetu %{name}.
+
 %prep
-%setup -q -a1 -a2 -a3 -a4 -a5
+%setup -q -a1 -a2 -a3 -a4 -a5 -a7
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
@@ -133,7 +149,7 @@ Motyw Polish News Module 4 dla widgetu %{name}.
 %{__perl} -pi -e 's@(python_libdirs=).*@$1"%{_libdir} /usr/share"@' configure
 
 %build
-cp /usr/share/automake/config.sub admin
+cp %{_datadir}/automake/config.sub admin
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 
 moc src/karamba.h -o src/karamba.moc
@@ -225,6 +241,9 @@ install PNM4/install $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4
 cp -r PNM4/news/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/
 #touch $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/*/newstemp
 
+# TubeClock
+cp -Rf TubeClock $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -242,18 +261,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files scripts
 %defattr(644,root,root,755)
-%{_bindir}/addSite.pl
-%{_bindir}/cal.pl
-%{_bindir}/free.pl
-%{_bindir}/k_weather.py
-%{_bindir}/local_mail.pl
-%{_bindir}/mails.pl
-%{_bindir}/meteocosult.pl
-%{_bindir}/pageChange.pl
-%{_bindir}/rdf_old.pl
-%{_bindir}/rdf.pl
-%{_bindir}/tv4weather.pl
-%{_bindir}/wcam
+%attr(755,root,root) %{_bindir}/addSite.pl
+%attr(755,root,root) %{_bindir}/cal.pl
+%attr(755,root,root) %{_bindir}/free.pl
+%attr(755,root,root) %{_bindir}/k_weather.py
+%attr(755,root,root) %{_bindir}/local_mail.pl
+%attr(755,root,root) %{_bindir}/mails.pl
+%attr(755,root,root) %{_bindir}/meteocosult.pl
+%attr(755,root,root) %{_bindir}/pageChange.pl
+%attr(755,root,root) %{_bindir}/rdf_old.pl
+%attr(755,root,root) %{_bindir}/rdf.pl
+%attr(755,root,root) %{_bindir}/tv4weather.pl
+%attr(755,root,root) %{_bindir}/wcam
 
 %files theme-OSXDocker
 %defattr(644,root,root,755)
@@ -309,3 +328,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/themes/superkaramba/PNM4/news/*/loader
 %{_datadir}/themes/superkaramba/PNM4/news/*/*.png
 %{_datadir}/themes/superkaramba/PNM4/pics/*.png
+
+%files theme-TubeClock
+%defattr(644,root,root,755)
+%dir %{_datadir}/themes/superkaramba/TubeClock
+%dir %{_datadir}/themes/superkaramba/TubeClock/icons
+%dir %{_datadir}/themes/superkaramba/TubeClock/pics
+%dir %{_datadir}/themes/superkaramba/TubeClock/sounds
+%{_datadir}/themes/superkaramba/TubeClock/TubeClock.*
+%{_datadir}/themes/superkaramba/TubeClock/icons/*.png
+%{_datadir}/themes/superkaramba/TubeClock/pics/*.png
+%{_datadir}/themes/superkaramba/TubeClock/sounds/*.wav
