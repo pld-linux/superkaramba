@@ -46,9 +46,10 @@ LDFLAGS="-lpython2.2"; export LDFLAGS
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
-
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Utilities/
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+install src/karramba.desktop $RPM_BUILD_ROOT%{_applnkdir}/Utilities/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
