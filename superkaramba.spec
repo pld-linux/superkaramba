@@ -29,6 +29,7 @@ Source5:	http://www.kdelook.org/content/files/6186-PNM4.tar.gz
 Source6:	6186-PNM3-themefile
 Patch0:		%{name}-src-configfix.patch
 Patch1:		%{name}-desktop.patch
+Patch2:		%{name}-gcc34.patch
 URL:		http://netdragon.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.0
@@ -118,6 +119,7 @@ Motyw Polish News Module 3 dla widgetu %{name}.
 %setup -q -a1 -a2 -a3 -a4 -a5
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 #%{__perl} -pi -e "s@/home/maciunio/karamba/DynBar/script@%{_datadir}/themes/news_pl/script@" \
 #		news_pl.theme/*.theme
