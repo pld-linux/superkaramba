@@ -10,10 +10,10 @@ Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
-URL:		http://karamba.sourceforge.net/
+URL:		http://netdragon.sourceforge.net/
 BuildRequires:	kdelibs-devel > 3.0
-BuildRequires: libart_lgpl-devel
-BuildRequires: libxml2-progs
+BuildRequires:	libart_lgpl-devel
+BuildRequires:	libxml2-progs
 BuildRequires:	python-devel > 2.2
 BuildRequires:	python-libs > 2.2
 BuildRequires:	python-modules > 2.2
