@@ -1,16 +1,15 @@
-diff -urN oryg/configure popr/configure
---- oryg/configure	2003-09-30 03:39:13.000000000 +0200
-+++ popr/configure	2004-04-02 19:35:13.000000000 +0200
-@@ -24579,7 +24579,7 @@
+--- superkaramba-0.35/configure	2004-11-16 05:12:48.000000000 +0000
++++ superkaramba-0.35.new/configure	2004-12-17 13:51:58.999799616 +0000
+@@ -25940,7 +25940,7 @@
  python_libdir=NO
  for i in $python_libdirs;
  do
 -  for j in libpython$version.a;
 +  for j in libpython$version.so;
    do
-     echo "configure: 24584: $i/$j" >&5
+     echo "configure: 25945: $i/$j" >&5
      if test -r "$i/$j"; then
-@@ -24590,12 +24590,12 @@
+@@ -25951,12 +25951,12 @@
    done
  done
  
@@ -23,9 +22,9 @@ diff -urN oryg/configure popr/configure
 -  for j in python$version/config/libpython$version.a;
 +  for j in python$version/config/libpython$version.so;
    do
-     echo "configure: 24600: $i/$j" >&5
+     echo "configure: 25961: $i/$j" >&5
      if test -r "$i/$j"; then
-@@ -24607,7 +24607,7 @@
+@@ -25968,7 +25968,7 @@
  done
  
    python_libdir=$python_libdir/python$version/config
@@ -34,7 +33,7 @@ diff -urN oryg/configure popr/configure
      python_libdir=no
    fi
  fi
-@@ -24618,12 +24618,12 @@
+@@ -25979,12 +25979,12 @@
    LIBPYTHON=-lpython$version
  fi
  
@@ -45,11 +44,11 @@ diff -urN oryg/configure popr/configure
  for i in $python_libdirs;
  do
 -  for j in python$version/copy.py;
-+  for j in python$version/copy.pyc;
++for j in python$version/copy.pyc;
    do
-     echo "configure: 24628: $i/$j" >&5
+     echo "configure: 25989: $i/$j" >&5
      if test -r "$i/$j"; then
-@@ -24635,7 +24635,7 @@
+@@ -25996,7 +25996,7 @@
  done
  
  python_moddir=$python_moddir/python$version
@@ -58,15 +57,14 @@ diff -urN oryg/configure popr/configure
    python_moddir=no
  fi
  
-diff -urN oryg/src/karamba.cpp popr/src/karamba.cpp
---- oryg/src/karamba.cpp	2003-10-19 22:02:45.000000000 +0200
-+++ popr/src/karamba.cpp	2004-03-21 23:30:38.000000000 +0100
-@@ -2243,7 +2243,7 @@
+--- superkaramba-0.35/src/karamba.cpp	2004-11-06 12:04:00.000000000 +0000
++++ superkaramba-0.35.new/src/karamba.cpp	2004-12-17 13:52:38.207839088 +0000
+@@ -56,7 +56,7 @@
+   QTimer::singleShot(0, this, SLOT(initPythonInterface()));
  
- 
-     //Matthew Kay: set window type to "dock" (plays better with taskbar themes this way)
--    KWin::setType(winId(), NET::Dock);
+   //Matthew Kay: set window type to "dock" (plays better with taskbar themes this way)
+-  KWin::setType(winId(), NET::Dock);
 +    KWin::setType(winId(), NET::Normal);
  
-     widgetMask = 0;
-     info = new NETWinInfo( qt_xdisplay(), winId(), qt_xrootwin(), NET::WMState );
+ #if defined(KDE_MAKE_VERSION)
+ # if KDE_VERSION >= KDE_MAKE_VERSION(3,1,9)
