@@ -22,6 +22,7 @@ BuildRequires:	kdelibs-devel > 3.0
 BuildRequires:	libart_lgpl-devel
 BuildRequires:	libart_lgpl-static
 BuildRequires:	libxml2-progs
+BuildRequires:	%{__perl}
 BuildRequires:	python-devel > 2.2
 BuildRequires:	python-libs > 2.2
 BuildRequires:	python-modules > 2.2
@@ -39,26 +40,24 @@ uruchamianie ma³ych interaktywnych widgetów na pulpicie KDE.
 
 %package themes
 Summary:	Themes for %{name}
-Summary(pl):	Tematy dla %{name}
+Summary(pl):	Motywy dla SuperKaramby
 Group:		X11/Applications
 Requires:	%{name}
 Obsoletes:	%{name} < %{name}-0.4
 
-%description -n %{name}-themes
-Themes for %{name}
+%description themes
+Themes for %{name}.
 
-%description -l pl -n %{name}-themes
-Tematy dla %{name}
-
+%description themes -l pl
+Motywy dla SuperKaramby.
 
 %prep
 %setup -q -a1 -a2 -a3 -a4
 
 %build
-
-perl -pi -e "s/\/home\/maciunio\/karamba\/DynBar\/script/\/usr\/share\/themes\/news_pl\/script/" \
+%{__perl} -pi -e "s@/home/maciunio/karamba/DynBar/script@%{_datadir}/themes/news_pl/script@" \
 		news_pl.theme/*.theme
-perl -pi -e "s/\/home\/genneth\/files\/Aqua/\/usr\/share\/pixmaps\/crystalsvg/" \
+%{__perl} -pi -e "s@/home/genneth/files/Aqua@%{_pixmapsdir}/crystalsvg@" \
 		OSXDocker/Conf.py
 
 moc src/karamba.h -o src/karamba.moc
@@ -70,12 +69,10 @@ rm -f missing
 %{__make} -f Makefile.cvs
 LDFLAGS="-lpython2.2"; export LDFLAGS
 
-
 %configure \
 	--with-pythondir=/usr/lib/python2.2 \
 	--with-extra-includes=/usr/include/python2.2
 %{__make}
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -104,7 +101,6 @@ install szPieG/script/*.* $RPM_BUILD_ROOT%{_datadir}/themes/szPieG/script
 
 install tuxbar/tuxbar.* $RPM_BUILD_ROOT%{_datadir}/themes/tuxbar
 install tuxbar/pics/*.png $RPM_BUILD_ROOT%{_datadir}/themes/tuxbar/pics
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
