@@ -243,7 +243,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_htmldir}/en/karamba
 %attr(755,root,root) %{_bindir}/superkaramba
 %{_applnkdir}/Utilities/*.desktop
-%{_pixmapsdir}/lo16-app-karamba.png 
+%{_pixmapsdir}/lo16-app-karamba.png
 %{_pixmapsdir}/lo32-app-karamba.png
 %dir %{_datadir}/apps/superkaramba
 %{_datadir}/apps/superkaramba/karambaui.rc
