@@ -30,6 +30,7 @@ Source6:	6186-PNM3-themefile
 Patch0:		%{name}-src-configfix.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://netdragon.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.0
 BuildRequires:	libart_lgpl-devel
 BuildRequires:	libart_lgpl-static
