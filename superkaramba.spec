@@ -18,6 +18,7 @@ BuildRequires:	python-libs > 2.2
 BuildRequires:	python-modules > 2.2
 BuildRequires:	libart_lgpl-devel
 BuildRequires:	xmms-devel
+BuildRequires:	libxml2-progs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
