@@ -64,22 +64,22 @@ Scripts for %{name}.
 Skrypty dla widgetu {%name}.
 
 
-%package themes
-Summary:	Themes for %{name}
-Summary(pl):	Motywy dla widgetu %{name}
-Group:		X11/Applications
-Requires:	%{name}
-Requires:	%{name}-scripts
-Requires: 	%{name}-themes-OSXDocker
-Requires: 	%{name}-themes-szPieG
-Requires: 	%{name}-themes-tuxbar
-Requires: 	%{name}-themes-PNM3
-
-%description themes
-Themes for %{name}.
-
-%description themes -l pl
-Motywy dla widgetu %{name}.
+#%package themes
+#Summary:	Themes for %{name}
+#Summary(pl):	Motywy dla widgetu %{name}
+#Group:		X11/Applications
+#Requires:	%{name}
+#Requires:	%{name}-scripts
+#Requires: 	%{name}-themes-OSXDocker
+#Requires: 	%{name}-themes-szPieG
+#Requires: 	%{name}-themes-tuxbar
+#Requires: 	%{name}-themes-PNM3
+#
+#%description themes
+#Themes for %{name}.
+#
+#%description themes -l pl
+#Motywy dla widgetu %{name}.
 
 OSXDocker
 %package themes-OSXDocker
@@ -143,6 +143,9 @@ Motyw Polish News Module 3 dla widgetu %{name}.
 #		news_pl.theme/*.theme
 %{__perl} -pi -e "s@/home/genneth/files/Aqua@%{_pixmapsdir}/crystalsvg@" \
 		OSXDocker/Conf.py
+
+%define         _htmldir        /usr/share/doc/kde/HTML
+kde_htmldir="%{_htmldir}"; export kde_htmldir
 
 moc src/karamba.h -o src/karamba.moc
 #rm -f missing
@@ -252,11 +255,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README
+%{_htmldir}/en/karamba
 %attr(755,root,root) %{_bindir}/superkaramba
 %{_applnkdir}/Utilities/*.desktop
 %{_pixmapsdir}/lo16-app-karamba.png 
 %{_pixmapsdir}/lo32-app-karamba.png 
-
+%{_datadir}/apps/superkaramba/karambaui.rc
 
 %files scripts
 %defattr(644,root,root,755)
@@ -274,9 +278,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/tv4weather.pl
 %{_bindir}/wcam
 
-%files themes
-%defattr(644,root,root,755)
-%dir %{_datadir}/themes/superkaramba
+#%files themes
+#%defattr(644,root,root,755)
+#%dir %{_datadir}/themes/superkaramba
 
 %files themes-OSXDocker
 %defattr(644,root,root,755)
