@@ -1,8 +1,8 @@
 Summary:	superkaramba - little interactive widgets on KDE desktop
 Summary(pl):	superkaramba - ma³e interaktywne widgety na pulpicie KDE
 Name:		superkaramba
-Version:	0.29
-Release:	0.1
+Version:	0.33
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
