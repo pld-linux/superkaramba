@@ -9,16 +9,16 @@ Version:	0.22b
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://prdownloads.sourceforge.net/netdragon/superkaramba-0.22b.tar.gz
+Source0:	http://dl.sourceforge.net/netdragon/superkaramba-0.22b.tar.gz
 URL:		http://karamba.sourceforge.net/
-BuildRequires:	qt-devel > 3.1
 BuildRequires:	kdelibs-devel > 3.0
+BuildRequires:	libart_lgpl-devel
+BuildRequires:	libxml2-progs
 BuildRequires:	python-devel > 2.2
 BuildRequires:	python-libs > 2.2
 BuildRequires:	python-modules > 2.2
-BuildRequires:	libart_lgpl-devel
+BuildRequires:	qt-devel > 3.1
 BuildRequires:	xmms-devel
-BuildRequires:	libxml2-progs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,10 +46,11 @@ LDFLAGS="-lpython2.2"; export LDFLAGS
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Utilities/
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Utilities
+
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-install src/karamba.desktop $RPM_BUILD_ROOT%{_applnkdir}/Utilities/
+install src/karamba.desktop $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -58,4 +59,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Utilities/
+%{_applnkdir}/Utilities/*.desktop
