@@ -25,7 +25,7 @@ Source4:	OSXDocker.tar.bz2
 # Source4-md5:	fb3a5175f55b582a7c123390ed3b5c66
 # news_pl created by Maciej "maciunio" Paczesny <maciunio(at)ask-bsi.org>
 Source5:	http://www.kdelook.org/content/files/6186-PNM4.tar.gz
-# Source5-md5:	beddad3088910949bfcd5eb8abf31312
+# Source5-md5:	ba311930d90daf6b4c591d25d837a9b8
 Source6:	6186-PNM3-themefile
 Patch0:		%{name}-src-configfix.patch
 Patch1:		%{name}-desktop.patch
@@ -110,10 +110,10 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
 
 %description themes-PNM4
-Polish News Module 3 theme for %{name}.
+Polish News Module 4 theme for %{name}.
 
 %description themes-PNM4 -l pl
-Motyw Polish News Module 3 dla widgetu %{name}.
+Motyw Polish News Module 4 dla widgetu %{name}.
 
 %prep
 %setup -q -a1 -a2 -a3 -a4 -a5
