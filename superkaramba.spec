@@ -2,7 +2,7 @@ Summary:	Little interactive widgets on KDE desktop
 Summary(pl):	Ma³e interaktywne widgety na pulpicie KDE
 Name:		superkaramba
 Version:	0.33
-Release:	1.1
+Release:	1.2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
@@ -146,6 +146,7 @@ Motyw Polish News Module 3 dla widgetu %{name}.
 
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 
+cp /usr/share/automake/config.sub admin
 moc src/karamba.h -o src/karamba.moc
 #rm -f missing
 #%{__aclocal}
