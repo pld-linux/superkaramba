@@ -1,0 +1,16 @@
+diff -urN PNM3src/PNM3.theme PNM3/PNM3.theme
+--- PNM3src/PNM3.theme	Thu Jan  1 01:00:00 1970
++++ PNM3/PNM3.theme	Mon Jun  9 14:38:59 2003
+@@ -0,0 +1,12 @@
++# Main "window"
++KARAMBA X=559 Y=40 W=465 H=430 INTERVAL=1000000 LOCKED=TRUE
++# Backgrouns and handle
++IMAGE X=0 Y=160 PATH="pics/handle.png" NAME="handle" #W=27 H=112
++IMAGE X=23 Y=19 PATH="pics/calendar_small.png" NAME="small" #W=56 #H=393 #Button bg
++IMAGE X=75 Y=19 PATH="pics/calendar.png" NAME="bg" #W=390 H=393 #Main bg
++# Arrows and reload
++IMAGE X=29 Y=0 PATH="pics/uparrow-panel.png" NAME="up_panel" #W=41 H=25
++IMAGE X=29 Y=403 PATH="pics/downarrow-panel.png" NAME="down_panel" #W=41 H=25
++IMAGE X=425 Y=318 PATH="pics/uparrow-inside.png" NAME="up_news" #W=22 H=22
++IMAGE X=425 Y=372 PATH="pics/downarrow-inside.png" NAME="down_news" #W=22 H=22
++IMAGE X=421 Y=341 PATH="pics/reload.png" NAME="reload" #W=22 H=22
