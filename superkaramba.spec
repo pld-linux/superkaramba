@@ -36,9 +36,9 @@ uruchamianie ma³ych interaktywnych widgetów na pulpicie KDE.
 
 %build
 
-perl -pi -e "s/\/home\/maciunio\/karamba\/DynBar\/script/\/usr\/share\/themes\/news_pl\/script/" \
+perl -pi -e "s/\/home\/maciunio\/karamba\/DynBar\/script/\/usr\/X11R6\/share\/themes\/news_pl\/script/" \
 		news_pl.theme/*.theme
-perl -pi -e "s/\/home\/genneth\/files\/Aqua/\/usr\/share\/pixmaps\/crystalsvg/" \
+perl -pi -e "s/\/home\/genneth\/files\/Aqua/\/usr\/X11R6\/share\/pixmaps\/crystalsvg/" \
 		OSXDocker/Conf.py
 
 cd src
