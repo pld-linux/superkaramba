@@ -1,0 +1,135 @@
+diff -Naur superkaramba-0.33.orig/configure superkaramba-0.33/configure
+--- superkaramba-0.33.orig/configure	2004-04-04 10:13:31.000000000 +0200
++++ superkaramba-0.33/configure	2004-04-04 10:37:21.793524720 +0200
+@@ -458,7 +458,7 @@
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE CONF_FILES CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE WOVERLOADED_VIRTUAL USE_EXCEPTIONS USE_RTTI CXXCPP NOOPT_CXXFLAGS NOOPT_CFLAGS REPO NOREPO KDE_USE_FINAL_TRUE KDE_USE_FINAL_FALSE KDE_USE_CLOSURE_TRUE KDE_USE_CLOSURE_FALSE LN_S ECHO RANLIB ac_ct_RANLIB EGREP LIBTOOL KDE_PLUGIN MSGFMT GMSGFMT XGETTEXT LIBUTIL LIBCOMPAT LIBCRYPT LIB_POLL FRAMEWORK_COREAUDIO LIBSOCKET LIBRESOLV X_EXTRA_LIBS LIBUCB LIBDL X_INCLUDES X_LDFLAGS x_libraries x_includes LIBSM X_PRE_LIBS LIB_X11 LIBXINERAMA QTE_NORTTI LIB_XEXT LIBPTHREAD USE_THREADS KDE_MT_LDFLAGS KDE_MT_LIBS USER_INCLUDES USER_LDFLAGS LIBZ LIBPNG LIBJPEG qt_libraries qt_includes QT_INCLUDES QT_LDFLAGS MOC UIC UIC_TR LIB_QT LIB_QPE kde_qtver KDE_EXTRA_RPATH KDE_RPATH kde_libraries kde_includes KDE_LDFLAGS KDE_INCLUDES all_includes all_libraries AUTODIRS DCOPIDL DCOPIDL2CPP DCOP_DEPENDENCIES MCOPIDL ARTSCCONFIG KDECONFIG MEINPROC KDE_XSL_STYLESHEET kde_libs_prefix kde_libs_htmldir kde_htmldir kde_appsdir kde_icondir kde_sounddir kde_datadir kde_locale kde_confdir kde_mimedir kde_wallpaperdir kde_bindir kde_templatesdir kde_servicesdir kde_servicetypesdir kde_moduledir kde_styledir kde_widgetdir LIB_KDECORE LIB_KDEUI LIB_KIO LIB_SMB LIB_KAB LIB_KHTML LIB_KSPELL LIB_KPARTS LIB_KDEPRINT LIB_KSYCOCA LIB_KFILE LIB_KFM PYTHONINC PYTHONLIB LIBPYTHON PYTHONMODDIR XMMS_LIBS XMMS_INCLUDES TOPSUBDIRS LIBOBJS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE CONF_FILES CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE WOVERLOADED_VIRTUAL USE_EXCEPTIONS USE_RTTI CXXCPP NOOPT_CXXFLAGS NOOPT_CFLAGS REPO NOREPO KDE_USE_FINAL_TRUE KDE_USE_FINAL_FALSE KDE_USE_CLOSURE_TRUE KDE_USE_CLOSURE_FALSE LN_S ECHO RANLIB ac_ct_RANLIB EGREP LIBTOOL KDE_PLUGIN MSGFMT GMSGFMT XGETTEXT LIBUTIL LIBCOMPAT LIBCRYPT LIB_POLL FRAMEWORK_COREAUDIO LIBSOCKET LIBRESOLV X_EXTRA_LIBS LIBUCB LIBDL X_INCLUDES X_LDFLAGS x_libraries x_includes LIBSM X_PRE_LIBS LIB_X11 LIBXINERAMA QTE_NORTTI LIB_XEXT LIBPTHREAD USE_THREADS KDE_MT_LDFLAGS KDE_MT_LIBS USER_INCLUDES USER_LDFLAGS LIBZ LIBPNG LIBJPEG qt_libraries qt_includes QT_INCLUDES QT_LDFLAGS MOC UIC UIC_TR LIB_QT LIB_QPE kde_qtver KDE_EXTRA_RPATH KDE_RPATH kde_libraries kde_includes KDE_LDFLAGS KDE_INCLUDES all_includes all_libraries AUTODIRS DCOPIDL DCOPIDL2CPP DCOP_DEPENDENCIES MCOPIDL ARTSCCONFIG KDECONFIG MEINPROC KDE_XSL_STYLESHEET kde_libs_prefix kde_libs_htmldir kde_htmldir kde_appsdir kde_icondir kde_sounddir kde_datadir kde_locale kde_confdir kde_mimedir kde_wallpaperdir kde_bindir kde_templatesdir kde_servicesdir kde_servicetypesdir kde_moduledir kde_styledir kde_widgetdir desktopdir LIB_KDECORE LIB_KDEUI LIB_KIO LIB_SMB LIB_KAB LIB_KHTML LIB_KSPELL LIB_KPARTS LIB_KDEPRINT LIB_KSYCOCA LIB_KFILE LIB_KFM PYTHONINC PYTHONLIB LIBPYTHON PYTHONMODDIR XMMS_LIBS XMMS_INCLUDES TOPSUBDIRS LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+ # Initialize some variables set by options.
+@@ -23182,6 +23182,9 @@
+   if test -z "$kde_widgetdir"; then
+     kde_widgetdir='\${libdir}/kde3/plugins/designer'
+   fi
++  if test -z "$desktopdir"; then
++    desktopdir='\${prefix}/share/applications'
++  fi
+ 
+ 
+   kde_cv_all_paths="kde_have_all_paths=\"yes\" \
+@@ -23203,7 +23206,8 @@
+ 	kde_moduledir=\"$kde_moduledir\" \
+    kde_styledir=\"$kde_styledir\" \
+ 	kde_widgetdir=\"$kde_widgetdir\" \
+-	kde_result=defaults"
++	kde_result=defaults \
++	desktopdir=\"$desktopdir\""
+ 
+ 
+ else
+@@ -23355,7 +23359,8 @@
+ 	kde_moduledir=\"$kde_moduledir\" \
+    kde_styledir=\"$kde_styledir\" \
+ 	kde_widgetdir=\"$kde_widgetdir\" \
+-	kde_result=$kde_result"
++	kde_result=$kde_result \
++	desktopdir=\"$desktopdir\""
+ 
+ 
+ 
+@@ -23380,7 +23385,8 @@
+    test -z "$kde_wallpaperdir" || test -z "$kde_templatesdir" ||
+    test -z "$kde_bindir" || test -z "$kde_servicesdir" ||
+    test -z "$kde_servicetypesdir" || test -z "$kde_moduledir" ||
+-   test -z "$kde_styledir" || test -z "kde_widgetdir"
++   test -z "$kde_styledir" || test -z "$desktopdir" ||
++   test -z "kde_widgetdir"
+    test "x$kde_have_all_paths" != "xyes"; then
+      kde_have_all_paths=no
+   fi
+@@ -23395,6 +23401,7 @@
+   kde_have_all_paths=
+   kde_styledir=
+   kde_widgetdir=
++  desktopdir=
+ 
+ if test "$ac_use_path_checking" = "default"; then
+ 
+@@ -23456,6 +23463,9 @@
+   if test -z "$kde_widgetdir"; then
+     kde_widgetdir='\${libdir}/kde3/plugins/designer'
+   fi
++  if test -z "$desktopdir"; then
++    desktopdir='\${prefix}/share/applications'
++  fi
+ 
+ 
+   kde_cv_all_paths="kde_have_all_paths=\"yes\" \
+@@ -23477,7 +23487,8 @@
+ 	kde_moduledir=\"$kde_moduledir\" \
+    kde_styledir=\"$kde_styledir\" \
+ 	kde_widgetdir=\"$kde_widgetdir\" \
+-	kde_result=defaults"
++	kde_result=defaults \
++	desktopdir=\$desktopdir\""
+ 
+ 
+ else
+@@ -23629,7 +23640,8 @@
+ 	kde_moduledir=\"$kde_moduledir\" \
+    kde_styledir=\"$kde_styledir\" \
+ 	kde_widgetdir=\"$kde_widgetdir\" \
+-	kde_result=$kde_result"
++	kde_result=$kde_result \
++	desktopdir=$desktopdir"
+ 
+ 
+ 
+@@ -32264,6 +32276,7 @@
+ s,@kde_moduledir@,$kde_moduledir,;t t
+ s,@kde_styledir@,$kde_styledir,;t t
+ s,@kde_widgetdir@,$kde_widgetdir,;t t
++s,@desktopdir@,$desktopdir,;t t
+ s,@LIB_KDECORE@,$LIB_KDECORE,;t t
+ s,@LIB_KDEUI@,$LIB_KDEUI,;t t
+ s,@LIB_KIO@,$LIB_KIO,;t t
+diff -Naur superkaramba-0.33.orig/src/Makefile.in superkaramba-0.33/src/Makefile.in
+--- superkaramba-0.33.orig/src/Makefile.in	2003-09-30 03:39:17.000000000 +0200
++++ superkaramba-0.33/src/Makefile.in	2004-04-04 10:28:18.143172136 +0200
+@@ -220,6 +220,7 @@
+ kde_templatesdir = @kde_templatesdir@
+ kde_wallpaperdir = @kde_wallpaperdir@
+ kde_widgetdir = @kde_widgetdir@
++desktopdir = @desktopdir@
+ libdir = @libdir@
+ libexecdir = @libexecdir@
+ localstatedir = @localstatedir@
+@@ -264,7 +265,7 @@
+ superkaramba_LDADD = -lkio -lXpm $(LIB_KDEUI) $(XMMS_LIBS) $(LIBPYTHON)
+ 
+ # this is where the desktop file will go 
+-shelldesktopdir = $(kde_appsdir)/Utilities
++shelldesktopdir = $(desktopdir)
+ shelldesktop_DATA = karamba.desktop
+ 
+ # this is where the shell's XML-GUI resource file goes
+diff -Naur superkaramba-0.33.orig/src/superkaramba.desktop superkaramba-0.33/src/superkaramba.desktop
+--- superkaramba-0.33.orig/src/superkaramba.desktop	2003-05-09 04:53:34.000000000 +0200
++++ superkaramba-0.33/src/superkaramba.desktop	2004-04-04 10:25:06.756267368 +0200
+@@ -1,7 +1,12 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+ Name=SuperKaramba
++Comment=An engine for cool desktop eyecandy
++Comment[pl]=Silnik dla super wodotrysków na pulpit
+ Exec=superkaramba
+ Icon=clanbomber
++Terminal=false
+ Type=Application
+-Comment=An engine for cool desktop eyecandy.
++OnlyShowIn=KDE
++Categories=Application;KDE;Amusement;Applet;
++# vi: encoding=utf-8
