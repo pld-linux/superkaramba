@@ -14,16 +14,21 @@ Source1:	http://www.efd.lth.se/~d98hk/karamba/scripts/scripts.tar.gz
 #
 # Here go modules, aka themes.
 #
-# news_pl created by Maciej "maciunio" Paczesny <maciunio(at)ask-bsi.org>
-Source2:	news_pl.theme.tar.gz
-# Source2-md5:	d41d8cd98f00b204e9800998ecf8427e
-Source3:	OSXDocker.tar.bz2
-# Source3-md5:	fb3a5175f55b582a7c123390ed3b5c66
+# szPieG theme
 # http://szpieg.gda.pl/  - made by Marcin Ciunelis <martin@ds.pg.gda.pl>
-Source4:	szPieG-%{name}-0.1.tar.gz
-# Source4-md5:	2336bd718ccf5deb06204e97248eeae0
-Source5:	tuxbar-pzoom-0.17g.tar.gz
-# Source5-md5:	04089c070215693833f2c5da7d8af8d2
+Source2:	szPieG-%{name}-0.1.tar.gz
+# Source2-md5:	2336bd718ccf5deb06204e97248eeae0
+# tuxbar-pzoom theme
+Source3:	tuxbar-pzoom-0.17g.tar.gz
+# Source3-md5:	04089c070215693833f2c5da7d8af8d2
+# OSXDocker theme
+Source4:	OSXDocker.tar.bz2
+# Source4-md5:	fb3a5175f55b582a7c123390ed3b5c66
+# news_pl created by Maciej "maciunio" Paczesny <maciunio(at)ask-bsi.org>
+Source5:	http://www.kdelook.org/content/download.php?content=6186
+
+
+
 URL:		http://netdragon.sourceforge.net/
 BuildRequires:	kdelibs-devel > 3.0
 BuildRequires:	libart_lgpl-devel
@@ -50,7 +55,6 @@ Summary:        Scripts for %{name}
 Summary(pl):    Skrypty dla widgetu %{name}
 Group:          X11/Applications
 Requires:       %{name}
-Obsoletes:      %{name} < %{name}-0.4
 
 %description scripts
 Scripts for %{name}.
@@ -64,7 +68,10 @@ Summary:	Themes for %{name}
 Summary(pl):	Motywy dla widgetu %{name}
 Group:		X11/Applications
 Requires:	%{name}
-Obsoletes:	%{name} < %{name}-0.4
+Requires:	%{name}-scripts
+Obsoletes: 	%{name}-themes-OSXDocker
+Obsoletes: 	%{name}-themes-szPieG
+Obsoletes: 	%{name}-themes-tuxbar
 
 %description themes
 Themes for %{name}.
@@ -72,12 +79,55 @@ Themes for %{name}.
 %description themes -l pl
 Motywy dla widgetu %{name}.
 
+OSXDocker
+%package themes-OSXDocker
+Summary:        OSXDocker theme for %{name}
+Summary(pl):    Motyw OSXDocker dla widgetu %{name}
+Group:          X11/Applications
+Requires:       %{name}
+Requires:       %{name}-scripts
+Obsoletes:      %{name}-themes
+
+%description themes-OSXDocker
+OSXDocker theme for %{name}.
+
+%description themes-OSXDocker -l pl
+Motyw OSXDocker dla widgetu %{name}.
+
+%package themes-szPieG
+Summary:        szPieG theme for %{name}
+Summary(pl):    Motyw szPieG dla widgetu %{name}
+Group:          X11/Applications
+Requires:       %{name}
+Requires:       %{name}-scripts
+Obsoletes:      %{name}-themes
+
+%description themes-szPieG
+szPieG theme for %{name}.
+
+%description themes-szPieG -l pl
+Motyw szPieG dla widgetu %{name}.
+
+%package themes-tuxbar
+Summary:        tuxbar theme for %{name}
+Summary(pl):    Motyw tuxbar dla widgetu %{name}
+Group:          X11/Applications
+Requires:       %{name}
+Requires:       %{name}-scripts
+Obsoletes:      %{name}-themes
+
+%description themes-tuxbar
+tuxbar theme for %{name}.
+
+%description themes-tuxbar -l pl
+Motyw tuxbar dla widgetu %{name}.
+
 %prep
-%setup -q -a1 -a2 -a3 -a4
+%setup -q -a1 -a2 -a3 -a4 -a5
 
 %build
-%{__perl} -pi -e "s@/home/maciunio/karamba/DynBar/script@%{_datadir}/themes/news_pl/script@" \
-		news_pl.theme/*.theme
+#%{__perl} -pi -e "s@/home/maciunio/karamba/DynBar/script@%{_datadir}/themes/news_pl/script@" \
+#		news_pl.theme/*.theme
 %{__perl} -pi -e "s@/home/genneth/files/Aqua@%{_pixmapsdir}/crystalsvg@" \
 		OSXDocker/Conf.py
 
@@ -97,9 +147,18 @@ LDFLAGS="-lpython2.2"; export LDFLAGS
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Utilities \
-	   $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/{OSXDocker/Icons,news_pl/{Pics/ikony,script},szPieG/{Pics,script}} \
-	   $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar/pics
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Utilities
+install -d $RPM_BUILD_ROOT%{_datadir}/themes
+install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba
+install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker
+install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker/Icons
+install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/
+install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/Pics
+install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/script
+install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar
+install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar/pics
+#	   $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/{OSXDocker/Icons,news_pl/{Pics/ikony,script},szPieG/{Pics,script}} \
+#	   $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar/pics
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
@@ -110,10 +169,10 @@ install src/karamba.desktop $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 install scripts/* $RPM_BUILD_ROOT%{_bindir}
 
 # Themes
-install news_pl.theme/*.theme $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/news_pl
-install news_pl.theme/Pics/*.png $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/news_pl/Pics
-install news_pl.theme/Pics/ikony/*.png $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/news_pl/Pics/ikony
-install news_pl.theme/script/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/news_pl/script
+#install news_pl.theme/*.theme $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/news_pl
+#install news_pl.theme/Pics/*.png $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/news_pl/Pics
+#install news_pl.theme/Pics/ikony/*.png $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/news_pl/Pics/ikony
+#install news_pl.theme/script/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/news_pl/script
 
 install OSXDocker/OSXDocker.* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker
 install OSXDocker/Conf* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker
@@ -155,19 +214,19 @@ rm -rf $RPM_BUILD_ROOT
 %files themes
 %dir %{_datadir}/themes/
 %dir %{_datadir}/themes/superkaramba/
-%dir %{_datadir}/themes/superkaramba/news_pl
-%dir %{_datadir}/themes/superkaramba/news_pl/Pics
-%dir %{_datadir}/themes/superkaramba/news_pl/Pics/ikony
-%dir %{_datadir}/themes/superkaramba/news_pl/script
-%{_datadir}/themes/superkaramba/news_pl/*.theme
-%{_datadir}/themes/superkaramba/news_pl/Pics/*.png
-%{_datadir}/themes/superkaramba/news_pl/Pics/ikony/*
-%attr(755,root,root) %{_datadir}/themes/superkaramba/news_pl/script/*
+#%dir %{_datadir}/themes/superkaramba/news_pl
+#%dir %{_datadir}/themes/superkaramba/news_pl/Pics
+#%dir %{_datadir}/themes/superkaramba/news_pl/Pics/ikony
+#%dir %{_datadir}/themes/superkaramba/news_pl/script
+#%{_datadir}/themes/superkaramba/news_pl/*.theme
+#%{_datadir}/themes/superkaramba/news_pl/Pics/*.png
+#%{_datadir}/themes/superkaramba/news_pl/Pics/ikony/*
+#%attr(755,root,root) %{_datadir}/themes/superkaramba/news_pl/script/*
 
 %dir %{_datadir}/themes/superkaramba/OSXDocker
 %dir %{_datadir}/themes/superkaramba/OSXDocker/Icons
 %{_datadir}/themes/superkaramba/OSXDocker/*.*
-%{_datadir}/themes/OSXDocker/Icons/*.png
+%{_datadir}/themes/superkaramba/OSXDocker/Icons/*.png
 
 %dir %{_datadir}/themes/superkaramba/szPieG
 %dir %{_datadir}/themes/superkaramba/szPieG/Pics
@@ -176,6 +235,26 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/themes/superkaramba/szPieG/Pics/*.*
 %attr(755,root,root) %{_datadir}/themes/superkaramba/szPieG/script/*
 
+%dir %{_datadir}/themes/superkaramba/tuxbar
+%dir %{_datadir}/themes/superkaramba/tuxbar/pics
+%{_datadir}/themes/superkaramba/tuxbar/tuxbar.*
+%{_datadir}/themes/superkaramba/tuxbar/pics/*.png
+
+%files themes-OSXDocker
+%dir %{_datadir}/themes/superkaramba/OSXDocker
+%dir %{_datadir}/themes/superkaramba/OSXDocker/Icons
+%{_datadir}/themes/superkaramba/OSXDocker/*.*
+%{_datadir}/themes/superkaramba/OSXDocker/Icons/*.png
+
+%files themes-szPieG
+%dir %{_datadir}/themes/superkaramba/szPieG
+%dir %{_datadir}/themes/superkaramba/szPieG/Pics
+%dir %{_datadir}/themes/superkaramba/szPieG/script
+%{_datadir}/themes/superkaramba/szPieG/*.*
+%{_datadir}/themes/superkaramba/szPieG/Pics/*.*
+%attr(755,root,root) %{_datadir}/themes/superkaramba/szPieG/script/*
+
+%files themes-tuxbar
 %dir %{_datadir}/themes/superkaramba/tuxbar
 %dir %{_datadir}/themes/superkaramba/tuxbar/pics
 %{_datadir}/themes/superkaramba/tuxbar/tuxbar.*
