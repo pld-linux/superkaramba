@@ -24,7 +24,7 @@ Source3:	tuxbar-pzoom-0.17g.tar.gz
 Source4:	OSXDocker.tar.bz2
 # Source4-md5:	fb3a5175f55b582a7c123390ed3b5c66
 # news_pl created by Maciej "maciunio" Paczesny <maciunio(at)ask-bsi.org>
-Source5:	http://www.kdelook.org/content/files/6186-PNM4.tar.gz
+Source5:	http://www.kde-look.org/content/files/6186-PNM4.tar.gz
 # Source5-md5:	ba311930d90daf6b4c591d25d837a9b8
 Source6:	6186-PNM3-themefile
 Patch0:		%{name}-src-configfix.patch
