@@ -1,0 +1,20 @@
+--- superkaramba-0.33/src/imagelabel.cpp.orig	2003-09-14 03:54:34.000000000 +0200
++++ superkaramba-0.33/src/imagelabel.cpp	2004-05-08 11:22:56.384339600 +0200
+@@ -537,7 +537,7 @@
+ 		imageEffect = 0;
+ 	}
+   	applyTransformations();
+-};
++}
+ 
+ void ImageLabel::intensity(float ratio, int millisec)
+ {
+@@ -549,7 +549,7 @@
+ 	//KPixmapEffect::intensity(pixmap, ratio);
+ 	imageEffect = new Intensity(this, ratio, millisec);
+   	applyTransformations();
+-};
++}
+ 
+ void ImageLabel::channelIntensity(float ratio, QString channel, int millisec)
+ {
