@@ -37,7 +37,7 @@ BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.0
 BuildRequires:	libart_lgpl-devel
 BuildRequires:	libxml2-progs
-BuildRequires:	%{__perl}
+BuildRequires:	perl-base
 BuildRequires:	python-devel >= 2.2
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	xmms-devel
