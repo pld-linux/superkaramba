@@ -51,10 +51,10 @@ SuperKaramba to narzêdzie pozwalaj±ce na ³atwe tworzenie i
 uruchamianie ma³ych interaktywnych widgetów na pulpicie KDE.
 
 %package scripts
-Summary:        Scripts for %{name}
-Summary(pl):    Skrypty dla widgetu %{name}
-Group:          X11/Applications
-Requires:       %{name}
+Summary:	Scripts for %{name}
+Summary(pl):	Skrypty dla widgetu %{name}
+Group:		X11/Applications
+Requires:	%{name}
 
 %description scripts
 Scripts for %{name}.
@@ -68,10 +68,10 @@ Skrypty dla widgetu {%name}.
 #Group:		X11/Applications
 #Requires:	%{name}
 #Requires:	%{name}-scripts
-#Requires: 	%{name}-themes-OSXDocker
-#Requires: 	%{name}-themes-szPieG
-#Requires: 	%{name}-themes-tuxbar
-#Requires: 	%{name}-themes-PNM3
+#Requires:	%{name}-themes-OSXDocker
+#Requires:	%{name}-themes-szPieG
+#Requires:	%{name}-themes-tuxbar
+#Requires:	%{name}-themes-PNM3
 #
 #%description themes
 #Themes for %{name}.
@@ -80,11 +80,11 @@ Skrypty dla widgetu {%name}.
 #Motywy dla widgetu %{name}.
 
 %package themes-OSXDocker
-Summary:        OSXDocker theme for %{name}
-Summary(pl):    Motyw OSXDocker dla widgetu %{name}
-Group:          X11/Applications
-Requires:       %{name}
-Requires:       %{name}-scripts
+Summary:	OSXDocker theme for %{name}
+Summary(pl):	Motyw OSXDocker dla widgetu %{name}
+Group:		X11/Applications
+Requires:	%{name}
+Requires:	%{name}-scripts
 
 %description themes-OSXDocker
 OSXDocker theme for %{name}.
@@ -93,11 +93,11 @@ OSXDocker theme for %{name}.
 Motyw OSXDocker dla widgetu %{name}.
 
 %package themes-szPieG
-Summary:        szPieG theme for %{name}
-Summary(pl):    Motyw szPieG dla widgetu %{name}
-Group:          X11/Applications
-Requires:       %{name}
-Requires:       %{name}-scripts
+Summary:	szPieG theme for %{name}
+Summary(pl):	Motyw szPieG dla widgetu %{name}
+Group:		X11/Applications
+Requires:	%{name}
+Requires:	%{name}-scripts
 
 %description themes-szPieG
 szPieG theme for %{name}.
@@ -106,11 +106,11 @@ szPieG theme for %{name}.
 Motyw szPieG dla widgetu %{name}.
 
 %package themes-tuxbar
-Summary:        tuxbar theme for %{name}
-Summary(pl):    Motyw tuxbar dla widgetu %{name}
-Group:          X11/Applications
-Requires:       %{name}
-Requires:       %{name}-scripts
+Summary:	tuxbar theme for %{name}
+Summary(pl):	Motyw tuxbar dla widgetu %{name}
+Group:		X11/Applications
+Requires:	%{name}
+Requires:	%{name}-scripts
 
 %description themes-tuxbar
 tuxbar theme for %{name}.
@@ -119,11 +119,11 @@ tuxbar theme for %{name}.
 Motyw tuxbar dla widgetu %{name}.
 
 %package themes-PNM4
-Summary:        Polish News Module 4 theme for %{name}
-Summary(pl):    Motyw Polish News Module 4 dla widgetu %{name}
-Group:          X11/Applications
-Requires:       %{name}
-Requires:       %{name}-scripts
+Summary:	Polish News Module 4 theme for %{name}
+Summary(pl):	Motyw Polish News Module 4 dla widgetu %{name}
+Group:		X11/Applications
+Requires:	%{name}
+Requires:	%{name}-scripts
 
 %description themes-PNM4
 Polish News Module 3 theme for %{name}.
