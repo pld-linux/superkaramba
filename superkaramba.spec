@@ -2,7 +2,7 @@ Summary:	Little interactive widgets on KDE desktop
 Summary(pl):	Ma³e interaktywne wid¿ety na pulpicie KDE
 Name:		superkaramba
 Version:	0.35
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
@@ -157,6 +157,10 @@ moc src/karamba.h -o src/karamba.moc
 #%{__automake}
 #%{__make} -f Makefile.cvs
 
+CFLAGS="%{rpmcflags} -I/usr/include/python2.4 -I/usr/include/python2.3"
+CXXFLAGS="%{rpmcflags} -I/usr/include/python2.4 -I/usr/include/python2.4"
+LDFLAGS="%{rpmldflags} -lpython"
+export CFLAGS CXXFLAGS LDFLAGS
 %configure \
 	--with-qt-libraries=%{_libdir}
 
