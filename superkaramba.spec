@@ -63,56 +63,56 @@ Scripts for superkaramba.
 %description scripts -l pl
 Skrypty dla widgetu superkaramba.
 
-%package themes-OSXDocker
+%package theme-OSXDocker
 Summary:	OSXDocker theme for %{name}
 Summary(pl):	Motyw OSXDocker dla widgetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
 
-%description themes-OSXDocker
+%description theme-OSXDocker
 OSXDocker theme for %{name}.
 
-%description themes-OSXDocker -l pl
+%description theme-OSXDocker -l pl
 Motyw OSXDocker dla widgetu %{name}.
 
-%package themes-szPieG
+%package theme-szPieG
 Summary:	szPieG theme for %{name}
 Summary(pl):	Motyw szPieG dla widgetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
 
-%description themes-szPieG
+%description theme-szPieG
 szPieG theme for %{name}.
 
-%description themes-szPieG -l pl
+%description theme-szPieG -l pl
 Motyw szPieG dla widgetu %{name}.
 
-%package themes-tuxbar
+%package theme-tuxbar
 Summary:	tuxbar theme for %{name}
 Summary(pl):	Motyw tuxbar dla widgetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
 
-%description themes-tuxbar
+%description theme-tuxbar
 tuxbar theme for %{name}.
 
-%description themes-tuxbar -l pl
+%description theme-tuxbar -l pl
 Motyw tuxbar dla widgetu %{name}.
 
-%package themes-PNM4
+%package theme-PNM4
 Summary:	Polish News Module 4 theme for %{name}
 Summary(pl):	Motyw Polish News Module 4 dla widgetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
 
-%description themes-PNM4
+%description theme-PNM4
 Polish News Module 4 theme for %{name}.
 
-%description themes-PNM4 -l pl
+%description theme-PNM4 -l pl
 Motyw Polish News Module 4 dla widgetu %{name}.
 
 %prep
@@ -251,14 +251,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/tv4weather.pl
 %{_bindir}/wcam
 
-%files themes-OSXDocker
+%files theme-OSXDocker
 %defattr(644,root,root,755)
 %dir %{_datadir}/themes/superkaramba/OSXDocker
 %dir %{_datadir}/themes/superkaramba/OSXDocker/Icons
 %{_datadir}/themes/superkaramba/OSXDocker/*.*
 %{_datadir}/themes/superkaramba/OSXDocker/Icons/*.png
 
-%files themes-szPieG
+%files theme-szPieG
 %defattr(644,root,root,755)
 %dir %{_datadir}/themes/superkaramba/szPieG
 %dir %{_datadir}/themes/superkaramba/szPieG/Pics
@@ -267,14 +267,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/themes/superkaramba/szPieG/Pics/*.*
 %attr(755,root,root) %{_datadir}/themes/superkaramba/szPieG/script/*
 
-%files themes-tuxbar
+%files theme-tuxbar
 %defattr(644,root,root,755)
 %dir %{_datadir}/themes/superkaramba/tuxbar
 %dir %{_datadir}/themes/superkaramba/tuxbar/pics
 %{_datadir}/themes/superkaramba/tuxbar/tuxbar.*
 %{_datadir}/themes/superkaramba/tuxbar/pics/*.png
 
-%files themes-PNM4
+%files theme-PNM4
 %defattr(644,root,root,755)
 %doc PNM4/{CHANGELOG,INSTALL,README}
 %dir %{_datadir}/themes/superkaramba/PNM4
