@@ -1,5 +1,5 @@
 Summary:	Little interactive widgets on KDE desktop
-Summary(pl):	Ma³e interaktywne widgety na pulpicie KDE
+Summary(pl):	Ma³e interaktywne wid¿ety na pulpicie KDE
 Name:		superkaramba
 Version:	0.33
 Release:	1.4
@@ -52,11 +52,11 @@ little interactive widgets on a KDE desktop.
 
 %description -l pl
 SuperKaramba to narzêdzie pozwalaj±ce na ³atwe tworzenie i
-uruchamianie ma³ych interaktywnych widgetów na pulpicie KDE.
+uruchamianie ma³ych interaktywnych wid¿etów na pulpicie KDE.
 
 %package scripts
 Summary:	Scripts for superkaramba
-Summary(pl):	Skrypty dla widgetu superkaramba
+Summary(pl):	Skrypty dla wid¿etu superkaramba
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -64,11 +64,11 @@ Requires:	%{name} = %{version}-%{release}
 Scripts for superkaramba.
 
 %description scripts -l pl
-Skrypty dla widgetu superkaramba.
+Skrypty dla wid¿etu superkaramba.
 
 %package theme-OSXDocker
 Summary:	OSXDocker theme for %{name}
-Summary(pl):	Motyw OSXDocker dla widgetu %{name}
+Summary(pl):	Motyw OSXDocker dla wid¿etu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -78,11 +78,11 @@ Obsoletes:	superkaramba-themes-OSXDocker
 OSXDocker theme for %{name}.
 
 %description theme-OSXDocker -l pl
-Motyw OSXDocker dla widgetu %{name}.
+Motyw OSXDocker dla wid¿etu %{name}.
 
 %package theme-szPieG
 Summary:	szPieG theme for %{name}
-Summary(pl):	Motyw szPieG dla widgetu %{name}
+Summary(pl):	Motyw szPieG dla wid¿etu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -92,11 +92,11 @@ Obsoletes:	superkaramba-themes-szPieG
 szPieG theme for %{name}.
 
 %description theme-szPieG -l pl
-Motyw szPieG dla widgetu %{name}.
+Motyw szPieG dla wid¿etu %{name}.
 
 %package theme-tuxbar
 Summary:	tuxbar theme for %{name}
-Summary(pl):	Motyw tuxbar dla widgetu %{name}
+Summary(pl):	Motyw tuxbar dla wid¿etu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -106,11 +106,11 @@ Obsoletes:	superkaramba-themes-tuxbar
 tuxbar theme for %{name}.
 
 %description theme-tuxbar -l pl
-Motyw tuxbar dla widgetu %{name}.
+Motyw tuxbar dla wid¿etu %{name}.
 
 %package theme-PNM4
 Summary:	Polish News Module 4 theme for %{name}
-Summary(pl):	Motyw Polish News Module 4 dla widgetu %{name}
+Summary(pl):	Motyw Polish News Module 4 dla wid¿etu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -120,11 +120,11 @@ Obsoletes:	superkaramba-themes-PNM4
 Polish News Module 4 theme for %{name}.
 
 %description theme-PNM4 -l pl
-Motyw Polish News Module 4 dla widgetu %{name}.
+Motyw Polish News Module 4 dla wid¿etu %{name}.
 
 %package theme-TubeClock
 Summary:	TubeClock theme for %{name}
-Summary(pl):	Motyw zegara lampowego dla widgetu %{name}
+Summary(pl):	Motyw zegara lampowego dla wid¿etu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -133,7 +133,7 @@ Requires:	%{name}-scripts = %{version}-%{release}
 Tube clock theme for %{name}.
 
 %description theme-TubeClock -l pl
-Motyw zegara lampowego dla widgetu %{name}.
+Motyw zegara lampowego dla wid¿etu %{name}.
 
 %prep
 %setup -q -a1 -a2 -a3 -a4 -a5 -a7
