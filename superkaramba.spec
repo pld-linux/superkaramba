@@ -21,6 +21,8 @@ BuildRequires:	xmms-devel
 Requires:	perl-libwww
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_prefix	/usr/X11R6
+
 %description
 SuperKaramba is a tool that allows anyone to easily create and run
 little interactive widgets on a KDE desktop.
