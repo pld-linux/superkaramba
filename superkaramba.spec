@@ -1,12 +1,12 @@
 Summary:	superkaramba - little interactive widgets on KDE desktop
 Summary(pl):	superkaramba - ma³e interaktywne widgety na pulpicie KDE
 Name:		superkaramba
-Version:	0.25
-Release:	0.5
+Version:	0.26
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
-# Source0-md5:	f3410f16d9217fd37b31a5a06c49f565
+# Source0-md5:	68bf76ad1f0e5baee6e98c9611defb74
 # news_pl created by Maciej "maciunio" Paczesny <maciunio(at)ask-bsi.org>
 Source1:	news_pl.theme.tar.gz
 # Source1-md5:	c92aa676f6f5eb57828febfd738d99b8
@@ -61,12 +61,12 @@ Motywy dla SuperKaramby.
 		OSXDocker/Conf.py
 
 moc src/karamba.h -o src/karamba.moc
-rm -f missing
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%{__make} -f Makefile.cvs
+#rm -f missing
+#%{__aclocal}
+#%{__autoconf}
+#%{__autoheader}
+#%{__automake}
+#%{__make} -f Makefile.cvs
 LDFLAGS="-lpython2.2"; export LDFLAGS
 
 %configure \
