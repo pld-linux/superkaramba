@@ -1,8 +1,8 @@
-Summary:	superkaramba - little interactive widgets on KDE desktop
-Summary(pl):	superkaramba - ma³e interaktywne widgety na pulpicie KDE
+Summary:	Little interactive widgets on KDE desktop
+Summary(pl):	Ma³e interaktywne widgety na pulpicie KDE
 Name:		superkaramba
 Version:	0.33
-Release:	1
+Release:	1.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
@@ -27,15 +27,17 @@ Source4:	OSXDocker.tar.bz2
 Source5:	http://www.kdelook.org/content/files/6186-PNM4.tar.gz
 # Source5-md5:	beddad3088910949bfcd5eb8abf31312
 Source6:	6186-PNM3-themefile
+Patch0:		%{name}-src-configfix.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://netdragon.sourceforge.net/
-BuildRequires:	kdelibs-devel > 3.0
+BuildRequires:	kdelibs-devel >= 3.0
 BuildRequires:	libart_lgpl-devel
 BuildRequires:	libart_lgpl-static
 BuildRequires:	libxml2-progs
 BuildRequires:	%{__perl}
-BuildRequires:	python-devel > 2.2
-BuildRequires:	python-libs > 2.2
-BuildRequires:	python-modules > 2.2
+BuildRequires:	python-devel >= 2.2
+BuildRequires:	python-libs >= 2.2
+BuildRequires:	python-modules >= 2.2
 BuildRequires:	xmms-devel
 Requires:	perl-libwww
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -133,6 +135,8 @@ Motyw Polish News Module 3 dla widgetu %{name}.
 
 %prep
 %setup -q -a1 -a2 -a3 -a4 -a5
+%patch0 -p1
+%patch1 -p1
 
 %build
 #%{__perl} -pi -e "s@/home/maciunio/karamba/DynBar/script@%{_datadir}/themes/news_pl/script@" \
@@ -149,11 +153,9 @@ moc src/karamba.h -o src/karamba.moc
 #%{__autoheader}
 #%{__automake}
 #%{__make} -f Makefile.cvs
-LDFLAGS="-lpython2.2"; export LDFLAGS
 
 %configure \
-	--with-pythondir=/usr/lib/python2.2 \
-	--with-extra-includes=/usr/include/python2.2
+	--prefix=%{_prefix}
 %{__make}
 
 %install
@@ -242,7 +244,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README
 %{_htmldir}/en/karamba
 %attr(755,root,root) %{_bindir}/superkaramba
-%{_applnkdir}/Utilities/*.desktop
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/lo16-app-karamba.png
 %{_pixmapsdir}/lo32-app-karamba.png
 %dir %{_datadir}/apps/superkaramba
