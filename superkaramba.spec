@@ -1,9 +1,5 @@
-#
-# TODO:
-# summary, desc, cleanups,
-#
-Summary:	superkaramba
-Summary(pl):	superkaramba
+Summary:	superkaramba - little interactive widgets on KDE desktop
+Summary(pl):	superkaramba - ma³e interaktywne widgety na pulpicie KDE
 Name:		superkaramba
 Version:	0.24
 Release:	0.1
@@ -25,8 +21,8 @@ SuperKaramba is a tool that allows anyone to easily create and run
 little interactive widgets on a KDE desktop.
 
 %description -l pl
-SuperKaramba to narzêdzie które pozwala na³atwe tworzenie i
-uruchamianie ma³ych interaktywnych wigetów na pulpicie KDE.
+SuperKaramba to narzêdzie pozwalaj±ce na ³atwe tworzenie i
+uruchamianie ma³ych interaktywnych widgetów na pulpicie KDE.
 
 %prep
 %setup -q 
@@ -40,7 +36,7 @@ cd ..
 #%{__autoconf}
 #%{__autoheader}
 #%{__automake}
-make -f Makefile.cvs
+%{__make} -f Makefile.cvs
 LDFLAGS="-lpython2.2"; export LDFLAGS
 %configure2_13 \
 	--with-pythondir=/usr/lib/python2.2 \
