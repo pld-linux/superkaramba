@@ -11,7 +11,6 @@ Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
 Source1:	http://www.efd.lth.se/~d98hk/karamba/scripts/scripts.tar.gz
 # Source1-md5:	94f0620854df678c4e7908679f139a78
 #
-#
 # Here go modules, aka themes.
 #
 # szPieG theme
@@ -28,8 +27,6 @@ Source4:	OSXDocker.tar.bz2
 Source5:	http://www.kdelook.org/content/files/6186-PNM3.tar.gz
 # Source5-md5:	755d56e6173e7d88d1ca61fb5d2a14fb
 Source6:	6186-PNM3-themefile
-
-
 URL:		http://netdragon.sourceforge.net/
 BuildRequires:	kdelibs-devel > 3.0
 BuildRequires:	libart_lgpl-devel
@@ -42,6 +39,8 @@ BuildRequires:	python-modules > 2.2
 BuildRequires:	xmms-devel
 Requires:	perl-libwww
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define         _htmldir        /usr/share/doc/kde/HTML
 
 %description
 SuperKaramba is a tool that allows anyone to easily create and run
@@ -63,7 +62,6 @@ Scripts for %{name}.
 %description scripts -l pl
 Skrypty dla widgetu {%name}.
 
-
 #%package themes
 #Summary:	Themes for %{name}
 #Summary(pl):	Motywy dla widgetu %{name}
@@ -81,7 +79,6 @@ Skrypty dla widgetu {%name}.
 #%description themes -l pl
 #Motywy dla widgetu %{name}.
 
-OSXDocker
 %package themes-OSXDocker
 Summary:        OSXDocker theme for %{name}
 Summary(pl):    Motyw OSXDocker dla widgetu %{name}
@@ -134,7 +131,6 @@ Polish News Module 3 theme for %{name}.
 %description themes-PNM3 -l pl
 Motyw Polish News Module 3 dla widgetu %{name}.
 
-
 %prep
 %setup -q -a1 -a2 -a3 -a4 -a5
 
@@ -144,7 +140,6 @@ Motyw Polish News Module 3 dla widgetu %{name}.
 %{__perl} -pi -e "s@/home/genneth/files/Aqua@%{_pixmapsdir}/crystalsvg@" \
 		OSXDocker/Conf.py
 
-%define         _htmldir        /usr/share/doc/kde/HTML
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 
 moc src/karamba.h -o src/karamba.moc
@@ -163,43 +158,32 @@ LDFLAGS="-lpython2.2"; export LDFLAGS
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Utilities
-install -d $RPM_BUILD_ROOT%{_datadir}/themes
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba
+install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
+	$RPM_BUILD_ROOT%{_applnkdir}/Utilities \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker/Icons \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/{Pics,script} \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar/pics \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/pics \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/01_www.linuxnews.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/02_www.7thguard.net \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/03_www.kde.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/04_www.jabberpl.org \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/05_www.mozillapl.org \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/06_www.openoffice.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/07_www.linux.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/08_www.linuxfan.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/09_www.rwo.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/10_www.idg.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/11_linuxweb.linuxindex.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/12_www.rp.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/13_www.gazeta.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/14_www.wp.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/15_www.foto.magicshop.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/16_media.netpr.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/17_www.medialink.pl
 
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker/Icons
-
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/Pics
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/script
-
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar/pics
-
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/pics
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/01_www.linuxnews.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/02_www.7thguard.net/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/03_www.kde.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/04_www.jabberpl.org/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/05_www.mozillapl.org/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/06_www.openoffice.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/07_www.linux.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/08_www.linuxfan.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/09_www.rwo.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/10_www.idg.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/11_linuxweb.linuxindex.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/12_www.rp.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/13_www.gazeta.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/14_www.wp.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/15_www.foto.magicshop.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/16_media.netpr.pl/
-install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/17_www.medialink.pl/
-
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install src/karamba.desktop $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 install src/lo16-app-karamba.png $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -231,23 +215,23 @@ install PNM3/pics/*.png $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/pics
 install %{SOURCE6} $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/PNM3.theme
 install PNM3/PNM3.py $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3
 install PNM3/install $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3
-install PNM3/news/01_www.linuxnews.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/01_www.linuxnews.pl/
-install PNM3/news/02_www.7thguard.net/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/02_www.7thguard.net/
-install PNM3/news/03_www.kde.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/03_www.kde.pl/
-install PNM3/news/04_www.jabberpl.org/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/04_www.jabberpl.org/
-install PNM3/news/05_www.mozillapl.org/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/05_www.mozillapl.org/
-install PNM3/news/06_www.openoffice.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/06_www.openoffice.pl/
-install PNM3/news/07_www.linux.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/07_www.linux.pl/
-install PNM3/news/08_www.linuxfan.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/08_www.linuxfan.pl/
-install PNM3/news/09_www.rwo.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/09_www.rwo.pl/
-install PNM3/news/10_www.idg.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/10_www.idg.pl/
-install PNM3/news/11_linuxweb.linuxindex.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/11_linuxweb.linuxindex.pl/
-install PNM3/news/12_www.rp.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/12_www.rp.pl/
-install PNM3/news/13_www.gazeta.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/13_www.gazeta.pl/
-install PNM3/news/14_www.wp.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/14_www.wp.pl/
-install PNM3/news/15_www.foto.magicshop.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/15_www.foto.magicshop.pl/
-install PNM3/news/16_media.netpr.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/16_media.netpr.pl/
-install PNM3/news/17_www.medialink.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/17_www.medialink.pl/
+install PNM3/news/01_www.linuxnews.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/01_www.linuxnews.pl
+install PNM3/news/02_www.7thguard.net/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/02_www.7thguard.net
+install PNM3/news/03_www.kde.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/03_www.kde.pl
+install PNM3/news/04_www.jabberpl.org/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/04_www.jabberpl.org
+install PNM3/news/05_www.mozillapl.org/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/05_www.mozillapl.org
+install PNM3/news/06_www.openoffice.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/06_www.openoffice.pl
+install PNM3/news/07_www.linux.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/07_www.linux.pl
+install PNM3/news/08_www.linuxfan.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/08_www.linuxfan.pl
+install PNM3/news/09_www.rwo.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/09_www.rwo.pl
+install PNM3/news/10_www.idg.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/10_www.idg.pl
+install PNM3/news/11_linuxweb.linuxindex.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/11_linuxweb.linuxindex.pl
+install PNM3/news/12_www.rp.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/12_www.rp.pl
+install PNM3/news/13_www.gazeta.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/13_www.gazeta.pl
+install PNM3/news/14_www.wp.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/14_www.wp.pl
+install PNM3/news/15_www.foto.magicshop.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/15_www.foto.magicshop.pl
+install PNM3/news/16_media.netpr.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/16_media.netpr.pl
+install PNM3/news/17_www.medialink.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM3/news/17_www.medialink.pl
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -259,12 +243,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/superkaramba
 %{_applnkdir}/Utilities/*.desktop
 %{_pixmapsdir}/lo16-app-karamba.png 
-%{_pixmapsdir}/lo32-app-karamba.png 
+%{_pixmapsdir}/lo32-app-karamba.png
+%dir %{_datadir}/apps/superkaramba
 %{_datadir}/apps/superkaramba/karambaui.rc
+%dir %{_datadir}/themes/superkaramba
 
 %files scripts
 %defattr(644,root,root,755)
-%dir %{_bindir}/
 %{_bindir}/addSite.pl
 %{_bindir}/cal.pl
 %{_bindir}/free.pl
@@ -280,7 +265,6 @@ rm -rf $RPM_BUILD_ROOT
 
 #%files themes
 #%defattr(644,root,root,755)
-#%dir %{_datadir}/themes/superkaramba
 
 %files themes-OSXDocker
 %defattr(644,root,root,755)
@@ -307,27 +291,27 @@ rm -rf $RPM_BUILD_ROOT
 
 %files themes-PNM3
 %defattr(644,root,root,755)
+%doc PNM3/{CHANGELOG,COPYRIGHT,INSTALL,LICENSE,PLUGIN_README,README,TODO}
 %dir %{_datadir}/themes/superkaramba/PNM3
 %dir %{_datadir}/themes/superkaramba/PNM3/pics
 %dir %{_datadir}/themes/superkaramba/PNM3/news
-%dir %{_datadir}/themes/superkaramba/PNM3/news/01_www.linuxnews.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/02_www.7thguard.net/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/03_www.kde.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/04_www.jabberpl.org/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/05_www.mozillapl.org/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/06_www.openoffice.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/07_www.linux.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/08_www.linuxfan.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/09_www.rwo.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/10_www.idg.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/11_linuxweb.linuxindex.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/12_www.rp.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/13_www.gazeta.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/14_www.wp.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/15_www.foto.magicshop.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/16_media.netpr.pl/
-%dir %{_datadir}/themes/superkaramba/PNM3/news/17_www.medialink.pl/
-
+%dir %{_datadir}/themes/superkaramba/PNM3/news/01_www.linuxnews.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/02_www.7thguard.net
+%dir %{_datadir}/themes/superkaramba/PNM3/news/03_www.kde.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/04_www.jabberpl.org
+%dir %{_datadir}/themes/superkaramba/PNM3/news/05_www.mozillapl.org
+%dir %{_datadir}/themes/superkaramba/PNM3/news/06_www.openoffice.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/07_www.linux.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/08_www.linuxfan.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/09_www.rwo.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/10_www.idg.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/11_linuxweb.linuxindex.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/12_www.rp.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/13_www.gazeta.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/14_www.wp.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/15_www.foto.magicshop.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/16_media.netpr.pl
+%dir %{_datadir}/themes/superkaramba/PNM3/news/17_www.medialink.pl
 %{_datadir}/themes/superkaramba/PNM3/PNM3.*
 %attr(755,root,root) %{_datadir}/themes/superkaramba/PNM3/install
 %attr(755,root,root) %{_datadir}/themes/superkaramba/PNM3/news/*/getNews
@@ -336,5 +320,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(666,root,root) %{_datadir}/themes/superkaramba/PNM3/news/*/rssparser.py
 %{_datadir}/themes/superkaramba/PNM3/news/*/*.png
 %{_datadir}/themes/superkaramba/PNM3/pics/*
-
-%doc PNM3/CHANGELOG PNM3/COPYRIGHT PNM3/INSTALL PNM3/LICENSE PNM3/PLUGIN_README PNM3/README PNM3/TODO
