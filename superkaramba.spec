@@ -2,7 +2,7 @@ Summary:	Little interactive widgets on KDE desktop
 Summary(pl):	Ma³e interaktywne widgety na pulpicie KDE
 Name:		superkaramba
 Version:	0.33
-Release:	1.2
+Release:	1.3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
@@ -33,12 +33,9 @@ URL:		http://netdragon.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.0
 BuildRequires:	libart_lgpl-devel
-BuildRequires:	libart_lgpl-static
 BuildRequires:	libxml2-progs
 BuildRequires:	%{__perl}
 BuildRequires:	python-devel >= 2.2
-BuildRequires:	python-libs >= 2.2
-BuildRequires:	python-modules >= 2.2
 BuildRequires:	xmms-devel
 Requires:	perl-libwww
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -54,40 +51,23 @@ SuperKaramba to narzêdzie pozwalaj±ce na ³atwe tworzenie i
 uruchamianie ma³ych interaktywnych widgetów na pulpicie KDE.
 
 %package scripts
-Summary:	Scripts for %{name}
-Summary(pl):	Skrypty dla widgetu %{name}
+Summary:	Scripts for superkaramba
+Summary(pl):	Skrypty dla widgetu superkaramba
 Group:		X11/Applications
-Requires:	%{name}
+Requires:	%{name} = %{version}-%{release}
 
 %description scripts
-Scripts for %{name}.
+Scripts for superkaramba.
 
 %description scripts -l pl
-Skrypty dla widgetu {%name}.
-
-#%package themes
-#Summary:	Themes for %{name}
-#Summary(pl):	Motywy dla widgetu %{name}
-#Group:		X11/Applications
-#Requires:	%{name}
-#Requires:	%{name}-scripts
-#Requires:	%{name}-themes-OSXDocker
-#Requires:	%{name}-themes-szPieG
-#Requires:	%{name}-themes-tuxbar
-#Requires:	%{name}-themes-PNM3
-#
-#%description themes
-#Themes for %{name}.
-#
-#%description themes -l pl
-#Motywy dla widgetu %{name}.
+Skrypty dla widgetu superkaramba.
 
 %package themes-OSXDocker
 Summary:	OSXDocker theme for %{name}
 Summary(pl):	Motyw OSXDocker dla widgetu %{name}
 Group:		X11/Applications
-Requires:	%{name}
-Requires:	%{name}-scripts
+Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-scripts = %{version}-%{release}
 
 %description themes-OSXDocker
 OSXDocker theme for %{name}.
@@ -99,8 +79,8 @@ Motyw OSXDocker dla widgetu %{name}.
 Summary:	szPieG theme for %{name}
 Summary(pl):	Motyw szPieG dla widgetu %{name}
 Group:		X11/Applications
-Requires:	%{name}
-Requires:	%{name}-scripts
+Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-scripts = %{version}-%{release}
 
 %description themes-szPieG
 szPieG theme for %{name}.
@@ -112,8 +92,8 @@ Motyw szPieG dla widgetu %{name}.
 Summary:	tuxbar theme for %{name}
 Summary(pl):	Motyw tuxbar dla widgetu %{name}
 Group:		X11/Applications
-Requires:	%{name}
-Requires:	%{name}-scripts
+Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-scripts = %{version}-%{release}
 
 %description themes-tuxbar
 tuxbar theme for %{name}.
@@ -125,8 +105,8 @@ Motyw tuxbar dla widgetu %{name}.
 Summary:	Polish News Module 4 theme for %{name}
 Summary(pl):	Motyw Polish News Module 4 dla widgetu %{name}
 Group:		X11/Applications
-Requires:	%{name}
-Requires:	%{name}-scripts
+Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-scripts = %{version}-%{release}
 
 %description themes-PNM4
 Polish News Module 3 theme for %{name}.
@@ -139,17 +119,18 @@ Motyw Polish News Module 3 dla widgetu %{name}.
 %patch0 -p1
 %patch1 -p1
 
-%build
 #%{__perl} -pi -e "s@/home/maciunio/karamba/DynBar/script@%{_datadir}/themes/news_pl/script@" \
 #		news_pl.theme/*.theme
 %{__perl} -pi -e "s@/home/genneth/files/Aqua@%{_pixmapsdir}/crystalsvg@" \
 		OSXDocker/Conf.py
 
+%{__perl} -pi -e 's@(python_libdirs=).*@$1"%{_libdir} /usr/share"@' configure
+
+%build
+cp /usr/share/automake/config.sub admin
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 
-cp /usr/share/automake/config.sub admin
 moc src/karamba.h -o src/karamba.moc
-#rm -f missing
 #%{__aclocal}
 #%{__autoconf}
 #%{__autoheader}
@@ -157,13 +138,13 @@ moc src/karamba.h -o src/karamba.moc
 #%{__make} -f Makefile.cvs
 
 %configure \
-	--prefix=%{_prefix}
+	--with-qt-libraries=%{_libdir}
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
-	$RPM_BUILD_ROOT%{_applnkdir}/Utilities \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker/Icons \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/{Pics,script} \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar/pics \
@@ -189,7 +170,6 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install src/karamba.desktop $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 install src/lo16-app-karamba.png $RPM_BUILD_ROOT%{_pixmapsdir}
 install src/lo32-app-karamba.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
@@ -238,6 +218,7 @@ install PNM4/install $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4
 #install PNM4/news/17_www.medialink.pl/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/17_www.medialink.pl
 cp -r PNM4/news/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/
 #touch $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/*/newstemp
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -267,9 +248,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/rdf.pl
 %{_bindir}/tv4weather.pl
 %{_bindir}/wcam
-
-#%files themes
-#%defattr(644,root,root,755)
 
 %files themes-OSXDocker
 %defattr(644,root,root,755)
