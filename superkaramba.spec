@@ -11,7 +11,7 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://prdownloads.sourceforge.net/netdragon/superkaramba-0.22b.tar.gz
 URL:		http://karamba.sourceforge.net/
-BuildRequires:	qt-devel > 3.0
+BuildRequires:	qt-devel > 3.1
 BuildRequires:	kdelibs-devel > 3.0
 BuildRequires:	python-devel > 2.2
 BuildRequires:	python-libs > 2.2
@@ -32,13 +32,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 cd src
 moc karamba.h > karamba.moc
 cd ..
-rm -f missing
-%{__libtoolize}
-%{__gettextize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
+#rm -f missing
+#%{__libtoolize}
+#%{__gettextize}
+#%{__aclocal}
+#%{__autoconf}
+#%{__autoheader}
+#%{__automake}
+make -f Makefile.cvs
 %configure2_13 \
 	--with-pythondir=/usr/lib/python2.2 \
 	--with-extra-includes=/usr/include/python2.2
