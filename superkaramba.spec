@@ -6,12 +6,17 @@ Release:	0.5
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
+# Source0-md5:	f3410f16d9217fd37b31a5a06c49f565
 # news_pl created by Maciej "maciunio" Paczesny <maciunio(at)ask-bsi.org>
 Source1:	news_pl.theme.tar.gz
+# Source1-md5:	c92aa676f6f5eb57828febfd738d99b8
 Source2:	OSXDocker.tar.bz2
+# Source2-md5:	fb3a5175f55b582a7c123390ed3b5c66
 # http://szpieg.gda.pl/  - made by Marcin Ciunelis <martin@ds.pg.gda.pl>
 Source3:	szPieG-%{name}-0.1.tar.gz
+# Source3-md5:	2336bd718ccf5deb06204e97248eeae0
 Source4:	tuxbar-pzoom-0.17g.tar.gz
+# Source4-md5:	04089c070215693833f2c5da7d8af8d2
 URL:		http://netdragon.sourceforge.net/
 BuildRequires:	kdelibs-devel > 3.0
 BuildRequires:	libart_lgpl-devel
