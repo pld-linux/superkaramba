@@ -38,6 +38,7 @@ cd ..
 #%{__autoheader}
 #%{__automake}
 make -f Makefile.cvs
+LDFLAGS="-lpython2.2"; export LDFLAGS
 %configure2_13 \
 	--with-pythondir=/usr/lib/python2.2 \
 	--with-extra-includes=/usr/include/python2.2
@@ -56,4 +57,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}
+%{_applnkdir}/Utilities/
