@@ -14,7 +14,7 @@ Source1:	http://www.efd.lth.se/~d98hk/karamba/scripts/scripts.tar.gz
 # Here go modules, aka themes.
 #
 # szPieG theme
-# http://szpieg.gda.pl/  - made by Marcin Ciunelis <martin@ds.pg.gda.pl>
+# http://szpieg.gda.pl/ - made by Marcin Ciunelis <martin@ds.pg.gda.pl>
 Source2:	szPieG-%{name}-0.1.tar.gz
 # Source2-md5:	2336bd718ccf5deb06204e97248eeae0
 # tuxbar-pzoom theme
@@ -44,7 +44,7 @@ BuildRequires:	xmms-devel
 Requires:	perl-libwww
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _htmldir        /usr/share/doc/kde/HTML
+%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 SuperKaramba is a tool that allows anyone to easily create and run
