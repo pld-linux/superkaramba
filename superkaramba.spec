@@ -5,25 +5,28 @@
 Summary:	superkaramba
 Summary(pl):	superkaramba
 Name:		superkaramba
-Version:	0.22b
+Version:	0.24
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/netdragon/superkaramba-0.22b.tar.gz
+Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
 URL:		http://karamba.sourceforge.net/
 BuildRequires:	kdelibs-devel > 3.0
-BuildRequires:	libart_lgpl-devel
-BuildRequires:	libxml2-progs
+BuildRequires: libart_lgpl-devel
+BuildRequires: libxml2-progs
 BuildRequires:	python-devel > 2.2
 BuildRequires:	python-libs > 2.2
 BuildRequires:	python-modules > 2.2
-BuildRequires:	qt-devel > 3.1
 BuildRequires:	xmms-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+SuperKaramba is a tool that allows anyone to easily create and run
+little interactive widgets on a KDE desktop.
 
 %description -l pl
+SuperKaramba to narzêdzie które pozwala na³atwe tworzenie i
+uruchamianie ma³ych interaktywnych wigetów na pulpicie KDE.
 
 %prep
 %setup -q 
