@@ -69,6 +69,7 @@ Summary(pl):	Motyw OSXDocker dla widgetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
+Obsoletes:	superkaramba-themes-OSXDocker
 
 %description theme-OSXDocker
 OSXDocker theme for %{name}.
@@ -82,6 +83,7 @@ Summary(pl):	Motyw szPieG dla widgetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
+Obsoletes:	superkaramba-themes-szPieG
 
 %description theme-szPieG
 szPieG theme for %{name}.
@@ -95,6 +97,7 @@ Summary(pl):	Motyw tuxbar dla widgetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
+Obsoletes:	superkaramba-themes-tuxbar
 
 %description theme-tuxbar
 tuxbar theme for %{name}.
@@ -108,6 +111,7 @@ Summary(pl):	Motyw Polish News Module 4 dla widgetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
+Obsoletes:	superkaramba-themes-PNM4
 
 %description theme-PNM4
 Polish News Module 4 theme for %{name}.
