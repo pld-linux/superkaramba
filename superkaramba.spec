@@ -34,7 +34,7 @@ moc karamba.h > karamba.moc
 cd ..
 #rm -f missing
 # %{__libtoolize}
-#%{__gettextize}
+# %{__gettextize}
 #%{__aclocal}
 #%{__autoconf}
 #%{__autoheader}
