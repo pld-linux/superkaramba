@@ -39,11 +39,10 @@ BuildRequires:	libart_lgpl-devel
 BuildRequires:	libxml2-progs
 BuildRequires:	%{__perl}
 BuildRequires:	python-devel >= 2.2
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	xmms-devel
 Requires:	perl-libwww
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 SuperKaramba is a tool that allows anyone to easily create and run
@@ -148,7 +147,7 @@ Motyw zegara lampowego dla wid¿etu %{name}.
 
 %build
 cp %{_datadir}/automake/config.sub admin
-kde_htmldir="%{_htmldir}"; export kde_htmldir
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 
 moc src/karamba.h -o src/karamba.moc
 #%{__aclocal}
@@ -158,7 +157,7 @@ moc src/karamba.h -o src/karamba.moc
 #%{__make} -f Makefile.cvs
 
 CFLAGS="%{rpmcflags} -I/usr/include/python2.4 -I/usr/include/python2.3"
-CXXFLAGS="%{rpmcflags} -I/usr/include/python2.4 -I/usr/include/python2.4"
+CXXFLAGS="%{rpmcflags} -I/usr/include/python2.4 -I/usr/include/python2.3"
 LDFLAGS="%{rpmldflags} -lpython"
 export CFLAGS CXXFLAGS LDFLAGS
 %configure \
@@ -246,13 +245,13 @@ cp -r PNM4/news/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/
 # TubeClock
 cp -Rf TubeClock $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba
 
+%find_lang karamba --with-kde
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f karamba.lang
 %defattr(644,root,root,755)
 %doc ChangeLog README
-%{_htmldir}/en/karamba
 %attr(755,root,root) %{_bindir}/superkaramba
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/lo16-app-karamba.png
