@@ -146,7 +146,7 @@ Motyw zegara lampowego dla wid¿etu %{name}.
 %{__perl} -pi -e 's@(python_libdirs=).*@$1"%{_libdir} /usr/share"@' configure
 
 %build
-cp %{_datadir}/automake/config.sub admin
+cp /usr/share/automake/config.sub admin
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 
 moc src/karamba.h -o src/karamba.moc
