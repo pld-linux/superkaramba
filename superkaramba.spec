@@ -2,7 +2,7 @@ Summary:	Little interactive widgets on KDE desktop
 Summary(pl):	Ma³e interaktywne wid¿ety na pulpicie KDE
 Name:		superkaramba
 Version:	0.36
-Release:	1
+Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
@@ -168,6 +168,7 @@ export CFLAGS CXXFLAGS LDFLAGS
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
+	$RPM_BUILD_ROOT%{_desktopdir} \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker/Icons \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/{Pics,script} \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar/pics \
@@ -192,7 +193,7 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
+install src/*.desktop $RPM_BUILD_ROOT%{_desktopdir}
 install src/lo16-app-karamba.png $RPM_BUILD_ROOT%{_pixmapsdir}
 install src/lo32-app-karamba.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
