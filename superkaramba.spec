@@ -1,12 +1,12 @@
 Summary:	Little interactive widgets on KDE desktop
 Summary(pl):	Ma³e interaktywne wid¿ety na pulpicie KDE
 Name:		superkaramba
-Version:	0.35
-Release:	3
+Version:	0.36
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
-# Source0-md5:	c397c35fc98112f13c35cee101085dde
+# Source0-md5:	b26f7da9e0ae1901cba5b555d77ce788
 # Scripts widely used by superkaramba theme creators
 Source1:	http://www.efd.lth.se/~d98hk/karamba/scripts/scripts.tar.gz
 # Source1-md5:	94f0620854df678c4e7908679f139a78
@@ -135,8 +135,8 @@ Motyw zegara lampowego dla wid¿etu %{name}.
 
 %prep
 %setup -q -a1 -a2 -a3 -a4 -a5 -a7
-%patch0 -p1
-%patch1 -p1
+#%patch0 -p1
+%patch1 -p0
 
 #%{__perl} -pi -e "s@/home/maciunio/karamba/DynBar/script@%{_datadir}/themes/news_pl/script@" \
 #		news_pl.theme/*.theme
