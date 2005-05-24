@@ -1,133 +1,139 @@
---- superkaramba-0.35/configure	2004-11-16 05:12:48.000000000 +0000
-+++ superkaramba-0.35.new/configure	2004-12-17 15:27:59.845018024 +0000
-@@ -459,7 +459,7 @@
+--- configure.old	2005-05-25 00:24:33.000000000 +0200
++++ configure	2005-05-25 00:45:48.000000000 +0200
+@@ -464,7 +464,8 @@
  # include <unistd.h>
  #endif"
  
--ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE am__leading_dot CONF_FILES CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE WOVERLOADED_VIRTUAL USE_EXCEPTIONS USE_RTTI CXXCPP NOOPT_CXXFLAGS NOOPT_CFLAGS REPO NOREPO KDE_USE_FINAL_TRUE KDE_USE_FINAL_FALSE KDE_USE_CLOSURE_TRUE KDE_USE_CLOSURE_FALSE LN_S ECHO RANLIB ac_ct_RANLIB EGREP LIBTOOL KDE_PLUGIN MSGFMT GMSGFMT XGETTEXT LIBUTIL LIBCOMPAT LIBCRYPT LIB_POLL FRAMEWORK_COREAUDIO LIBSOCKET LIBRESOLV X_EXTRA_LIBS LIBUCB LIBDL X_INCLUDES X_LDFLAGS x_libraries x_includes LIBSM X_PRE_LIBS LIB_X11 LIBXINERAMA QTE_NORTTI LIB_XEXT LIBPTHREAD USE_THREADS KDE_MT_LDFLAGS KDE_MT_LIBS USER_INCLUDES USER_LDFLAGS LIBZ LIBPNG LIBJPEG qt_libraries qt_includes QT_INCLUDES QT_LDFLAGS MOC UIC UIC_TR LIB_QT LIB_QPE kde_qtver KDE_EXTRA_RPATH KDE_RPATH kde_libraries kde_includes KDE_LDFLAGS KDE_INCLUDES all_includes all_libraries AUTODIRS DCOPIDL DCOPIDL2CPP DCOP_DEPENDENCIES MCOPIDL ARTSCCONFIG KDECONFIG MEINPROC KDE_XSL_STYLESHEET kde_libs_prefix kde_libs_htmldir kde_htmldir kde_appsdir kde_icondir kde_sounddir kde_datadir kde_locale kde_confdir kde_mimedir kde_wallpaperdir kde_bindir kde_templatesdir kde_servicesdir kde_servicetypesdir kde_moduledir kde_styledir kde_widgetdir LIB_KDECORE LIB_KDEUI LIB_KIO LIB_SMB LIB_KAB LIB_KHTML LIB_KSPELL LIB_KPARTS LIB_KDEPRINT LIB_KSYCOCA LIB_KFILE LIB_KFM PYTHONINC PYTHONLIB LIBPYTHON PYTHONMODDIR XMMS_LIBS XMMS_INCLUDES TOPSUBDIRS LIBOBJS LTLIBOBJS'
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar CONF_FILES CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE WOVERLOADED_VIRTUAL USE_EXCEPTIONS USE_RTTI CXXCPP NOOPT_CXXFLAGS NOOPT_CFLAGS KDE_USE_FINAL_TRUE KDE_USE_FINAL_FALSE KDE_USE_CLOSURE_TRUE KDE_USE_CLOSURE_FALSE KDE_NO_UNDEFINED KDE_USE_NMCHECK_TRUE KDE_USE_NMCHECK_FALSE EGREP LN_S ECHO AR ac_ct_AR RANLIB ac_ct_RANLIB F77 FFLAGS ac_ct_F77 LIBTOOL KDE_PLUGIN MSGFMT GMSGFMT XGETTEXT LIBUTIL LIBCOMPAT LIBCRYPT LIBRESOLV LIB_POLL FRAMEWORK_COREAUDIO LIBSOCKET X_EXTRA_LIBS LIBUCB LIBDL X_PRE_LIBS LIB_X11 LIB_XRENDER LIBSM X_INCLUDES X_LDFLAGS x_includes x_libraries QTE_NORTTI LIB_XEXT LIBPTHREAD USE_THREADS KDE_MT_LDFLAGS KDE_MT_LIBS USER_INCLUDES USER_LDFLAGS LIBZ LIBPNG LIBJPEG qt_libraries qt_includes QT_INCLUDES QT_LDFLAGS PERL MOC UIC UIC_TR LIB_QT LIB_QPE kde_qtver KDE_EXTRA_RPATH KDE_RPATH X_RPATH kde_libraries kde_includes KDE_LDFLAGS KDE_INCLUDES all_includes all_libraries AUTODIRS include_ARTS_TRUE include_ARTS_FALSE KCONFIG_COMPILER KCFG_DEPENDENCIES DCOPIDLNG DCOPIDL DCOPIDL2CPP DCOP_DEPENDENCIES MCOPIDL ARTSCCONFIG KDECONFIG MEINPROC KDE_XSL_STYLESHEET XMLLINT kde_libs_prefix kde_libs_htmldir kde_htmldir kde_appsdir kde_icondir kde_sounddir kde_datadir kde_locale kde_confdir kde_kcfgdir kde_mimedir kde_wallpaperdir kde_bindir xdg_appsdir xdg_menudir xdg_directorydir kde_templatesdir kde_servicesdir kde_servicetypesdir kde_moduledir kdeinitdir kde_styledir kde_widgetdir LIB_KDECORE LIB_KDEUI LIB_KIO LIB_SMB LIB_KAB LIB_KABC LIB_KHTML LIB_KSPELL LIB_KPARTS LIB_KDEPRINT LIB_KUTILS LIB_KDEPIM LIB_KSYCOCA LIB_KFILE LIB_KFM PYTHONINC PYTHONLIB LIBPYTHON PYTHONMODDIR XMMS_LIBS XMMS_INCLUDES TOPSUBDIRS LIBOBJS LTLIBOBJS'
 +ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE CONF_FILES CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CPP CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE WOVERLOADED_VIRTUAL USE_EXCEPTIONS USE_RTTI CXXCPP NOOPT_CXXFLAGS NOOPT_CFLAGS REPO NOREPO KDE_USE_FINAL_TRUE KDE_USE_FINAL_FALSE KDE_USE_CLOSURE_TRUE KDE_USE_CLOSURE_FALSE LN_S ECHO RANLIB ac_ct_RANLIB EGREP LIBTOOL KDE_PLUGIN MSGFMT GMSGFMT XGETTEXT LIBUTIL LIBCOMPAT LIBCRYPT LIB_POLL FRAMEWORK_COREAUDIO LIBSOCKET LIBRESOLV X_EXTRA_LIBS LIBUCB LIBDL X_INCLUDES X_LDFLAGS x_libraries x_includes LIBSM X_PRE_LIBS LIB_X11 LIBXINERAMA QTE_NORTTI LIB_XEXT LIBPTHREAD USE_THREADS KDE_MT_LDFLAGS KDE_MT_LIBS USER_INCLUDES USER_LDFLAGS LIBZ LIBPNG LIBJPEG qt_libraries qt_includes QT_INCLUDES QT_LDFLAGS MOC UIC UIC_TR LIB_QT LIB_QPE kde_qtver KDE_EXTRA_RPATH KDE_RPATH kde_libraries kde_includes KDE_LDFLAGS KDE_INCLUDES all_includes all_libraries AUTODIRS DCOPIDL DCOPIDL2CPP DCOP_DEPENDENCIES MCOPIDL ARTSCCONFIG KDECONFIG MEINPROC KDE_XSL_STYLESHEET kde_libs_prefix kde_libs_htmldir kde_htmldir kde_appsdir kde_icondir kde_sounddir kde_datadir kde_locale kde_confdir kde_mimedir kde_wallpaperdir kde_bindir kde_templatesdir kde_servicesdir kde_servicetypesdir kde_moduledir kde_styledir kde_widgetdir desktopdir LIB_KDECORE LIB_KDEUI LIB_KIO LIB_SMB LIB_KAB LIB_KHTML LIB_KSPELL LIB_KPARTS LIB_KDEPRINT LIB_KSYCOCA LIB_KFILE LIB_KFM PYTHONINC PYTHONLIB LIBPYTHON PYTHONMODDIR XMMS_LIBS XMMS_INCLUDES TOPSUBDIRS LIBOBJS LTLIBOBJS'
++
  ac_subst_files=''
  
  # Initialize some variables set by options.
-@@ -23326,6 +23326,9 @@
- _ACEOF
- 
-   fi
-+  if test -z "$desktopdir"; then
-+    desktopdir='\${prefix}/share/applications'
-+  fi
- 
-   if test "x$kde_use_threading" = "xyes"; then
-     CPPFLAGS="$USE_THREADS -DQT_THREAD_SUPPORT $CPPFLAGS"
-@@ -24517,6 +24520,9 @@
+@@ -29615,6 +29616,9 @@
    if test -z "$kde_widgetdir"; then
      kde_widgetdir='\${libdir}/kde3/plugins/designer'
    fi
 +  if test -z "$desktopdir"; then
 +    desktopdir='\${prefix}/share/applications'
 +  fi
- 
- 
-   kde_cv_all_paths="kde_have_all_paths=\"yes\" \
-@@ -24538,7 +24544,8 @@
- 	kde_moduledir=\"$kde_moduledir\" \
-    kde_styledir=\"$kde_styledir\" \
- 	kde_widgetdir=\"$kde_widgetdir\" \
--	kde_result=defaults"
-+	kde_result=defaults \
-+	desktopdir=\"$desktopdir\""
+   if test -z "$xdg_appsdir"; then
+     xdg_appsdir='\${datadir}/applications/kde'
+   fi
+@@ -29649,15 +29653,16 @@
+     xdg_appsdir=\"$xdg_appsdir\" \
+     xdg_menudir=\"$xdg_menudir\" \
+     xdg_directorydir=\"$xdg_directorydir\" \
+-    kde_result=defaults"
++    kde_result=defaults \
++    desktopdir=\"$desktopdir\""
  
  
  else
-@@ -24690,7 +24697,8 @@
- 	kde_moduledir=\"$kde_moduledir\" \
-    kde_styledir=\"$kde_styledir\" \
- 	kde_widgetdir=\"$kde_widgetdir\" \
--	kde_result=$kde_result"
-+	kde_result=$kde_result \
-+	desktopdir=\"$desktopdir\""
+ 
+   if test $kde_qtver = 1; then
+-     echo "$as_me:$LINENO: result: compiling" >&5
++       echo "$as_me:$LINENO: result: compiling" >&5
+ echo "${ECHO_T}compiling" >&6
+-
++  
+ 
+     echo "$as_me:$LINENO: checking for KDE headers installed" >&5
+ echo $ECHO_N "checking for KDE headers installed... $ECHO_C" >&6
+@@ -29811,7 +29816,8 @@
+     xdg_appsdir=\"$xdg_appsdir\" \
+     xdg_menudir=\"$xdg_menudir\" \
+     xdg_directorydir=\"$xdg_directorydir\" \
+-    kde_result=$kde_result"
++    kde_result=$kde_result \
++    desktopdir=\"$desktopdir\""
  
  
  
-@@ -24715,7 +24723,8 @@
+@@ -29840,7 +29846,8 @@
     test -z "$kde_wallpaperdir" || test -z "$kde_templatesdir" ||
     test -z "$kde_bindir" || test -z "$kde_servicesdir" ||
     test -z "$kde_servicetypesdir" || test -z "$kde_moduledir" ||
--   test -z "$kde_styledir" || test -z "kde_widgetdir"
+-   test -z "$kde_styledir" || test -z "kde_widgetdir" ||
 +   test -z "$kde_styledir" || test -z "$desktopdir" ||
 +   test -z "kde_widgetdir"
+    test -z "$xdg_appsdir" || test -z "$xdg_menudir" || test -z "$xdg_directorydir" ||
     test "x$kde_have_all_paths" != "xyes"; then
       kde_have_all_paths=no
-   fi
-@@ -24730,6 +24739,7 @@
+@@ -29856,6 +29863,7 @@
    kde_have_all_paths=
    kde_styledir=
    kde_widgetdir=
-+  desktopdir=
++  desktopdir=  
+   xdg_appsdir = xdg_menudir= xdg_directorydir=
  
  if test "$ac_use_path_checking" = "default"; then
- 
-@@ -24791,6 +24801,9 @@
+@@ -29921,6 +29929,11 @@
    if test -z "$kde_widgetdir"; then
      kde_widgetdir='\${libdir}/kde3/plugins/designer'
    fi
 +  if test -z "$desktopdir"; then
 +    desktopdir='\${prefix}/share/applications'
 +  fi
- 
- 
-   kde_cv_all_paths="kde_have_all_paths=\"yes\" \
-@@ -24812,7 +24825,8 @@
- 	kde_moduledir=\"$kde_moduledir\" \
-    kde_styledir=\"$kde_styledir\" \
- 	kde_widgetdir=\"$kde_widgetdir\" \
--	kde_result=defaults"
-+	kde_result=defaults \
-+	desktopdir=\$desktopdir\""
++  
++  
+   if test -z "$xdg_appsdir"; then
+     xdg_appsdir='\${datadir}/applications/kde'
+   fi
+@@ -29955,7 +29968,8 @@
+     xdg_appsdir=\"$xdg_appsdir\" \
+     xdg_menudir=\"$xdg_menudir\" \
+     xdg_directorydir=\"$xdg_directorydir\" \
+-    kde_result=defaults"
++    kde_result=defaults \
++    desktopdir=\$desktopdir\""
  
  
  else
-@@ -24964,7 +24978,8 @@
- 	kde_moduledir=\"$kde_moduledir\" \
-    kde_styledir=\"$kde_styledir\" \
- 	kde_widgetdir=\"$kde_widgetdir\" \
--	kde_result=$kde_result"
-+	kde_result=$kde_result \
-+	desktopdir=$desktopdir"
+@@ -30117,7 +30131,8 @@
+     xdg_appsdir=\"$xdg_appsdir\" \
+     xdg_menudir=\"$xdg_menudir\" \
+     xdg_directorydir=\"$xdg_directorydir\" \
+-    kde_result=$kde_result"
++    kde_result=$kde_result \
++    desktopdir=$desktopdir"
  
  
  
-@@ -24985,10 +25000,14 @@
+@@ -30139,11 +30154,17 @@
     test -z "$kde_wallpaperdir" || test -z "$kde_templatesdir" ||
     test -z "$kde_bindir" || test -z "$kde_servicesdir" ||
     test -z "$kde_servicetypesdir" || test -z "$kde_moduledir" ||
--   test -z "$kde_styledir" || test -z "kde_widgetdir"
+-   test -z "$kde_styledir" || test -z "kde_widgetdir" ||
 +   test -z "$kde_styledir" || test -z "$desktopdir" ||
 +   test -z "kde_widgetdir"
+    test -z "$xdg_appsdir" || test -z "$xdg_menudir" || test -z "$xdg_directorydir" ||
     test "x$kde_have_all_paths" != "xyes"; then
       kde_have_all_paths=no
    fi
-+  if test -z "$desktopdir"; then
-+    desktopdir='\${prefix}/share/applications'
-+  fi
++   if test -z "$desktopdir"; then
++     desktopdir='\${prefix}/share/applications'
++   fi
++  
++  
  
    kde_result="$kde_result (cache overridden)"
  fi
-@@ -25940,7 +25959,7 @@
+@@ -31494,7 +31515,7 @@
  python_libdir=NO
  for i in $python_libdirs;
  do
 -  for j in libpython$version.a;
 +  for j in libpython$version.so;
    do
-     echo "configure: 25945: $i/$j" >&5
+     echo "configure: 31490: $i/$j" >&5
      if test -r "$i/$j"; then
-@@ -25951,12 +25970,12 @@
+@@ -31505,12 +31526,12 @@
    done
  done
  
--if test ! -r $python_libdir/libpython$version.a; then
-+if test ! -r $python_libdir/libpython$version.so; then
+-  if test ! -r $python_libdir/libpython$version.a; then
++  if test ! -r $python_libdir/libpython$version.so; then
  
  python_libdir=NO
  for i in $python_libdirs;
@@ -135,33 +141,37 @@
 -  for j in python$version/config/libpython$version.a;
 +  for j in python$version/config/libpython$version.so;
    do
-     echo "configure: 25961: $i/$j" >&5
+     echo "configure: 31506: $i/$j" >&5
      if test -r "$i/$j"; then
-@@ -25968,7 +25987,7 @@
+@@ -31522,7 +31543,7 @@
  done
  
-   python_libdir=$python_libdir/python$version/config
--  if test ! -r $python_libdir/libpython$version.a; then
-+  if test ! -r $python_libdir/libpython$version.so; then
-     python_libdir=no
+     python_libdir=$python_libdir/python$version/config
+-    if test ! -r $python_libdir/libpython$version.a; then
++    if test ! -r $python_libdir/libpython$version.so; then
+       python_libdir=no
+     fi
    fi
- fi
-@@ -25979,12 +25998,12 @@
-   LIBPYTHON=-lpython$version
- fi
+@@ -31617,7 +31638,8 @@
  
--python_libdirs="$ac_python_dir/lib /usr/lib /usr/local /usr/lib $kde_extra_libs"
+ PYTHONINC=-I$python_incdir
+ 
+-python_libdirs="$ac_python_dir/lib$kdelibsuff /usr/lib$kdelibsuff /usr/local /usr/lib$kdelibsuff $kde_extra_libs"
 +python_libdirs="$ac_python_dir/lib /usr/lib /usr/share /usr/local /usr/lib $kde_extra_libs"
++
  
+ python_libdir=NO
+ for i in $python_libdirs;
+@@ -31682,7 +31704,7 @@
  python_moddir=NO
  for i in $python_libdirs;
  do
 -  for j in python$version/copy.py;
-+for j in python$version/copy.pyc;
++  for j in python$version/copy.pyc;
    do
-     echo "configure: 25989: $i/$j" >&5
+     echo "configure: 31678: $i/$j" >&5
      if test -r "$i/$j"; then
-@@ -25996,7 +26015,7 @@
+@@ -31694,7 +31716,7 @@
  done
  
  python_moddir=$python_moddir/python$version
@@ -170,46 +180,13 @@
    python_moddir=no
  fi
  
-@@ -34238,6 +34257,7 @@
- s,@kde_moduledir@,$kde_moduledir,;t t
- s,@kde_styledir@,$kde_styledir,;t t
- s,@kde_widgetdir@,$kde_widgetdir,;t t
-+s,@desktopdir@,$desktopdir,;t t
- s,@LIB_KDECORE@,$LIB_KDECORE,;t t
- s,@LIB_KDEUI@,$LIB_KDEUI,;t t
- s,@LIB_KIO@,$LIB_KIO,;t t
---- superkaramba-0.35/src/Makefile.in	2004-11-16 05:13:23.000000000 +0000
-+++ superkaramba-0.35.new/src/Makefile.in	2004-12-17 14:08:52.491725424 +0000
-@@ -221,6 +221,7 @@
+--- src/Makefile.in.old	2005-05-25 00:48:54.000000000 +0200
++++ src/Makefile.in	2005-05-25 00:49:26.000000000 +0200
+@@ -373,6 +373,7 @@
  kde_templatesdir = @kde_templatesdir@
  kde_wallpaperdir = @kde_wallpaperdir@
  kde_widgetdir = @kde_widgetdir@
 +desktopdir = @desktopdir@
+ kdeinitdir = @kdeinitdir@
  libdir = @libdir@
  libexecdir = @libexecdir@
- localstatedir = @localstatedir@
-@@ -267,7 +268,7 @@
- superkaramba_LDADD = -lkio -lXpm $(LIB_KDEUI) $(XMMS_LIBS) $(LIBPYTHON)
- 
- # this is where the desktop file will go 
--shelldesktopdir = $(kde_appsdir)/Utilities
-+shelldesktopdir = $(desktopdir)
- shelldesktop_DATA = karamba.desktop
- 
- # this is where the shell's XML-GUI resource file goes
---- superkaramba-0.35/src/superkaramba.desktop	2004-06-02 22:55:55.000000000 +0000
-+++ superkaramba-0.35.new/src/superkaramba.desktop	2004-12-17 14:08:52.493725120 +0000
-@@ -1,7 +1,12 @@
- [Desktop Entry]
- Encoding=UTF-8
- Name=SuperKaramba
-+Comment=An engine for cool desktop eyecandy
-+Comment[pl]=Silnik dla super wodotrysków na pulpit
- Exec=superkaramba
- Icon=clanbomber
-+Terminal=false
- Type=Application
--Comment=An engine for cool desktop eyecandy.
-+OnlyShowIn=KDE
-+Categories=Application;KDE;Amusement;Applet;
-+# vi: encoding=utf-8
