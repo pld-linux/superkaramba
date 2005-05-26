@@ -2,7 +2,7 @@ Summary:	Little interactive widgets on KDE desktop
 Summary(pl):	Ma³e interaktywne wid¿ety na pulpicie KDE
 Name:		superkaramba
 Version:	0.36
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
@@ -32,6 +32,8 @@ Source7:	TubeClock.tar.bz2
 # Source7-md5:	ced8e1f6772bc0ed224971d3bbd9ec4e
 Patch0:		%{name}-src-configfix.patch
 Patch1:		%{name}-desktop.patch
+Patch2:         %{name}-configure.patch
+Patch3:         %{name}-Makefile.in.patch
 URL:		http://netdragon.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.0
@@ -137,6 +139,8 @@ Motyw zegara lampowego dla wid¿etu %{name}.
 %setup -q -a1 -a2 -a3 -a4 -a5 -a7
 #%patch0 -p1
 %patch1 -p0
+%patch2 -p0
+%patch3 -p0
 
 #%{__perl} -pi -e "s@/home/maciunio/karamba/DynBar/script@%{_datadir}/themes/news_pl/script@" \
 #		news_pl.theme/*.theme
