@@ -2,7 +2,7 @@ Summary:	Little interactive widgets on KDE desktop
 Summary(pl):	Ma³e interaktywne wid¿ety na pulpicie KDE
 Name:		superkaramba
 Version:	0.36
-Release:	0.2
+Release:	0.3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
@@ -13,10 +13,6 @@ Source1:	http://www.efd.lth.se/~d98hk/karamba/scripts/scripts.tar.gz
 #
 # Here go modules, aka themes.
 #
-# szPieG theme
-# http://szpieg.gda.pl/ - made by Marcin Ciunelis <martin@ds.pg.gda.pl>
-Source2:	szPieG-%{name}-0.1.tar.gz
-# Source2-md5:	2336bd718ccf5deb06204e97248eeae0
 # tuxbar-pzoom theme
 Source3:	tuxbar-pzoom-0.17g.tar.gz
 # Source3-md5:	04089c070215693833f2c5da7d8af8d2
@@ -44,6 +40,7 @@ BuildRequires:	python-devel >= 2.2
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	xmms-devel
 Requires:	perl-libwww
+Obsoletes:	%{name}-theme-szPieG
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -79,20 +76,6 @@ OSXDocker theme for %{name}.
 
 %description theme-OSXDocker -l pl
 Motyw OSXDocker dla wid¿etu %{name}.
-
-%package theme-szPieG
-Summary:	szPieG theme for %{name}
-Summary(pl):	Motyw szPieG dla wid¿etu %{name}
-Group:		X11/Applications
-Requires:	%{name} = %{version}-%{release}
-Requires:	%{name}-scripts = %{version}-%{release}
-Obsoletes:	superkaramba-themes-szPieG
-
-%description theme-szPieG
-szPieG theme for %{name}.
-
-%description theme-szPieG -l pl
-Motyw szPieG dla wid¿etu %{name}.
 
 %package theme-tuxbar
 Summary:	tuxbar theme for %{name}
@@ -174,7 +157,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
 	$RPM_BUILD_ROOT%{_desktopdir} \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker/Icons \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/{Pics,script} \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar/pics \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/pics \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/01_www.linuxnews.pl \
@@ -216,10 +198,6 @@ install OSXDocker/OSXDocker.* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSX
 install OSXDocker/Conf* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker
 install OSXDocker/Icons/*.png $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker/Icons
 install OSXDocker/Buttons.txt $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker
-
-install szPieG/*.theme $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG
-install szPieG/Pics/*.* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/Pics
-install szPieG/script/*.* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/szPieG/script
 
 install tuxbar/tuxbar.* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar
 install tuxbar/pics/*.png $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar/pics
@@ -295,15 +273,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/themes/superkaramba/OSXDocker/Icons
 %{_datadir}/themes/superkaramba/OSXDocker/*.*
 %{_datadir}/themes/superkaramba/OSXDocker/Icons/*.png
-
-%files theme-szPieG
-%defattr(644,root,root,755)
-%dir %{_datadir}/themes/superkaramba/szPieG
-%dir %{_datadir}/themes/superkaramba/szPieG/Pics
-%dir %{_datadir}/themes/superkaramba/szPieG/script
-%{_datadir}/themes/superkaramba/szPieG/*.*
-%{_datadir}/themes/superkaramba/szPieG/Pics/*.*
-%attr(755,root,root) %{_datadir}/themes/superkaramba/szPieG/script/*
 
 %files theme-tuxbar
 %defattr(644,root,root,755)
