@@ -1,0 +1,19 @@
+--- src/Makefile.in.old	2005-05-26 11:13:54.000000000 +0200
++++ src/Makefile.in	2005-05-26 11:15:09.000000000 +0200
+@@ -373,6 +373,7 @@
+ kde_templatesdir = @kde_templatesdir@
+ kde_wallpaperdir = @kde_wallpaperdir@
+ kde_widgetdir = @kde_widgetdir@
++desktopdir = @desktopdir@
+ kdeinitdir = @kdeinitdir@
+ libdir = @libdir@
+ libexecdir = @libexecdir@
+@@ -416,7 +417,7 @@
+ superkaramba_LDADD = -lkio -lXpm $(LIB_KDEUI) $(XMMS_LIBS) $(LIBPYTHON)
+ 
+ # this is where the desktop file will go 
+-shelldesktopdir = $(kde_appsdir)/Utilities
++shelldesktopdir = $(desktopdir)
+ shelldesktop_DATA = karamba.desktop
+ 
+ # this is where the shell's XML-GUI resource file goes
