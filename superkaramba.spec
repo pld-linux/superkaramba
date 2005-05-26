@@ -181,28 +181,29 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/02_www.7thguard.net \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/03_www.kde.pl \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/04_www.jabberpl.org \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/05_www.mozillapl.org \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/06_www.openoffice.pl \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/07_www.linux.pl \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/08_www.linuxfan.pl \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/09_www.rwo.pl \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/10_www.idg.pl \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/11_linuxweb.linuxindex.pl \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/12_www.rp.pl \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/13_www.gazeta.pl \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/14_www.wp.pl \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/15_www.foto.magicshop.pl \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/16_media.netpr.pl \
-	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/17_www.medialink.pl
+        $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/12_www.rp.pl \
+        $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/13_www.gazeta.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/TubeClock/{icons,pics,sounds}
+
+#       $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/05_www.mozillapl.org \
+#	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/08_www.linuxfan.pl \
+#	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/09_www.rwo.pl \
+#	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/10_www.idg.pl \
+#	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/11_linuxweb.linuxindex.pl \
+#	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/14_www.wp.pl \
+#	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/15_www.foto.magicshop.pl \
+#	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/16_media.netpr.pl \
+#	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/17_www.medialink.pl
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install src/*.desktop $RPM_BUILD_ROOT%{_desktopdir}
+install src/superkaramba.desktop $RPM_BUILD_ROOT%{_desktopdir}
 install src/lo16-app-karamba.png $RPM_BUILD_ROOT%{_pixmapsdir}
 install src/lo32-app-karamba.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
 # Scripts
-
 install scripts/* $RPM_BUILD_ROOT%{_bindir}
 
 # Themes
@@ -248,7 +249,15 @@ cp -r PNM4/news/* $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/
 #touch $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/*/newstemp
 
 # TubeClock
-cp -Rf TubeClock $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba
+install TubeClock/*.{py*,theme} $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/TubeClock
+install TubeClock/icons/*.png $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/TubeClock/icons
+install TubeClock/pics/*.png $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/TubeClock/pics
+install TubeClock/sounds/*.wav $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/TubeClock/sounds
+install TubeClock/.directory $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba
+
+#clean unused files
+rm $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/*/newstemp
+rm -frd $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/TubeClock/pics/.xvpics/
 
 %find_lang karamba --with-kde
 %clean
