@@ -28,8 +28,8 @@ Source7:	TubeClock.tar.bz2
 # Source7-md5:	ced8e1f6772bc0ed224971d3bbd9ec4e
 Patch0:		%{name}-src-configfix.patch
 Patch1:		%{name}-desktop.patch
-Patch2:         %{name}-configure.patch
-Patch3:         %{name}-Makefile.in.patch
+Patch2:		%{name}-configure.patch
+Patch3:		%{name}-Makefile.in.patch
 URL:		http://netdragon.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3.0
@@ -165,11 +165,11 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/04_www.jabberpl.org \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/06_www.openoffice.pl \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/07_www.linux.pl \
-        $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/12_www.rp.pl \
-        $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/13_www.gazeta.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/12_www.rp.pl \
+	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/13_www.gazeta.pl \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/TubeClock/{icons,pics,sounds}
 
-#       $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/05_www.mozillapl.org \
+#	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/05_www.mozillapl.org \
 #	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/08_www.linuxfan.pl \
 #	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/09_www.rwo.pl \
 #	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/10_www.idg.pl \
