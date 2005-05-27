@@ -2,7 +2,7 @@ Summary:	Little interactive widgets on KDE desktop
 Summary(pl):	Ma³e interaktywne wid¿ety na pulpicie KDE
 Name:		superkaramba
 Version:	0.36
-Release:	0.3
+Release:	0.4
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
@@ -14,18 +14,18 @@ Source1:	http://www.efd.lth.se/~d98hk/karamba/scripts/scripts.tar.gz
 # Here go modules, aka themes.
 #
 # tuxbar-pzoom theme
-Source3:	tuxbar-pzoom-0.17g.tar.gz
-# Source3-md5:	04089c070215693833f2c5da7d8af8d2
+Source2:	tuxbar-pzoom-0.17g.tar.gz
+# Source2-md5:	04089c070215693833f2c5da7d8af8d2
 # OSXDocker theme
-Source4:	OSXDocker.tar.bz2
-# Source4-md5:	fb3a5175f55b582a7c123390ed3b5c66
+Source3:	OSXDocker.tar.bz2
+# Source3-md5:	fb3a5175f55b582a7c123390ed3b5c66
 # news_pl created by Maciej "maciunio" Paczesny <maciunio(at)ask-bsi.org>
-Source5:	http://www.kde-look.org/content/files/6186-PNM4.tar.gz
-# Source5-md5:	ba311930d90daf6b4c591d25d837a9b8
-Source6:	6186-PNM3-themefile
+Source4:	http://www.kde-look.org/content/files/6186-PNM4.tar.gz
+# Source4-md5:	ba311930d90daf6b4c591d25d837a9b8
+Source5:	6186-PNM3-themefile
 # TubeClock theme
-Source7:	TubeClock.tar.bz2
-# Source7-md5:	ced8e1f6772bc0ed224971d3bbd9ec4e
+Source6:	TubeClock.tar.bz2
+# Source6-md5:	ced8e1f6772bc0ed224971d3bbd9ec4e
 Patch0:		%{name}-src-configfix.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-configure.patch
@@ -119,7 +119,7 @@ Tube clock theme for %{name}.
 Motyw zegara lampowego dla wid¿etu %{name}.
 
 %prep
-%setup -q -a1 -a2 -a3 -a4 -a5 -a7
+%setup -q -a1 -a2 -a3 -a4 -a6
 #%patch0 -p1
 %patch1 -p0
 %patch2 -p0
@@ -135,6 +135,9 @@ Motyw zegara lampowego dla wid¿etu %{name}.
 %build
 cp /usr/share/automake/config.sub admin
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
+
+# remove duplicated .desktop file
+#rm src/karamba.desktop
 
 moc src/karamba.h -o src/karamba.moc
 #%{__aclocal}
@@ -245,11 +248,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %attr(755,root,root) %{_bindir}/superkaramba
-%{_desktopdir}/*.desktop
+%{_desktopdir}/superkaramba.desktop
 %{_pixmapsdir}/lo16-app-karamba.png
 %{_pixmapsdir}/lo32-app-karamba.png
 %dir %{_datadir}/apps/superkaramba
 %{_datadir}/apps/superkaramba/karambaui.rc
+%{_datadir}/themes/superkaramba/.directory
 %dir %{_datadir}/themes/superkaramba
 
 %files scripts
