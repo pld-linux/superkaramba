@@ -1,12 +1,16 @@
+# TODO:
+# check lang!!!! (find_lang karamba --with-kde doesn't work) chgw why?
+
 Summary:	Little interactive widgets on KDE desktop
 Summary(pl):	Ma³e interaktywne wid¿ety na pulpicie KDE
 Name:		superkaramba
-Version:	0.36
-Release:	1
+Version:	0.37
+%define		_rc	RC1
+Release:	0.%{_rc}.1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}.tar.gz
-# Source0-md5:	b26f7da9e0ae1901cba5b555d77ce788
+Source0:	http://dl.sourceforge.net/netdragon/%{name}-%{version}-%{_rc}.tar.gz
+# Source0-md5:	458c6b9c9379ee509957b01c7ca56079
 # Scripts widely used by superkaramba theme creators
 Source1:	http://www.efd.lth.se/~d98hk/karamba/scripts/scripts.tar.gz
 # Source1-md5:	94f0620854df678c4e7908679f139a78
@@ -26,7 +30,7 @@ Source5:	6186-PNM3-themefile
 # TubeClock theme
 Source6:	TubeClock.tar.bz2
 # Source6-md5:	ced8e1f6772bc0ed224971d3bbd9ec4e
-Patch0:		%{name}-src-configfix.patch
+Patch0:		%{name}-karamba.cpp.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-configure.patch
 Patch3:		%{name}-Makefile.in.patch
@@ -119,8 +123,8 @@ Tube clock theme for %{name}.
 Motyw zegara lampowego dla wid¿etu %{name}.
 
 %prep
-%setup -q -a1 -a2 -a3 -a4 -a6
-#%patch0 -p1
+%setup -q -a1 -a2 -a3 -a4 -a6 -n %{name}-%{version}-%{_rc}
+%patch0 -p0
 %patch1 -p0
 %patch2 -p0
 %patch3 -p0
@@ -139,7 +143,7 @@ kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 # remove duplicated .desktop file
 #rm src/karamba.desktop
 
-moc src/karamba.h -o src/karamba.moc
+moc superkaramba/src/karamba.h -o superkaramba/src/karamba.moc
 #%{__aclocal}
 #%{__autoconf}
 #%{__autoheader}
@@ -155,9 +159,15 @@ export CFLAGS CXXFLAGS LDFLAGS
 
 %{__make}
 
+cd superkaramba
+%{__make} install \
+        DESTDIR=$RPM_BUILD_ROOT
+cd -
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
+	$RPM_BUILD_ROOT%{_bindir} \
 	$RPM_BUILD_ROOT%{_desktopdir} \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/OSXDocker/Icons \
 	$RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/tuxbar/pics \
@@ -184,9 +194,13 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir} \
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install src/superkaramba.desktop $RPM_BUILD_ROOT%{_desktopdir}
-install src/lo16-app-karamba.png $RPM_BUILD_ROOT%{_pixmapsdir}
-install src/lo32-app-karamba.png $RPM_BUILD_ROOT%{_pixmapsdir}
+cd superkaramba
+%{__make} install \
+        DESTDIR=$RPM_BUILD_ROOT
+cd -
+
+install %{name}/src/%{name}.desktop $RPM_BUILD_ROOT%{_desktopdir}
+#install %{name}/icons/*.{png,svgz} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 # Scripts
 install scripts/* $RPM_BUILD_ROOT%{_bindir}
@@ -240,19 +254,21 @@ install TubeClock/.directory $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba
 rm $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/*/newstemp
 rm -frd $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/TubeClock/pics/.xvpics/
 
-%find_lang karamba --with-kde
+#%find_lang karamba --with-kde
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f karamba.lang
+%files
+#  -f karamba.lang
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %attr(755,root,root) %{_bindir}/superkaramba
 %{_desktopdir}/superkaramba.desktop
-%{_pixmapsdir}/lo16-app-karamba.png
-%{_pixmapsdir}/lo32-app-karamba.png
+%{_iconsdir}/*/*/*/*.png
+%{_iconsdir}/*/*/*/*.svgz
 %dir %{_datadir}/apps/superkaramba
-%{_datadir}/apps/superkaramba/karambaui.rc
+%{_datadir}/mimelnk/application/*.desktop
+%{_datadir}/apps/superkaramba/superkarambaui.rc
 %{_datadir}/themes/superkaramba/.directory
 %dir %{_datadir}/themes/superkaramba
 
@@ -311,7 +327,7 @@ rm -rf $RPM_BUILD_ROOT
 #%dir %{_datadir}/themes/superkaramba/PNM4/news/17_www.medialink.pl
 %{_datadir}/themes/superkaramba/PNM4/PNM4.*
 %attr(755,root,root) %{_datadir}/themes/superkaramba/PNM4/install
-#%attr(755,root,root) %{_datadir}/themes/superkaramba/PNM4/news/*/newstemp
+#attr(755,root,root) %{_datadir}/themes/superkaramba/PNM4/news/*/newstemp
 %attr(755,root,root) %{_datadir}/themes/superkaramba/PNM4/news/*/getNews
 %attr(755,root,root) %{_datadir}/themes/superkaramba/PNM4/news/*/loader
 %{_datadir}/themes/superkaramba/PNM4/news/*/*.png
