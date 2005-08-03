@@ -1,6 +1,3 @@
-# TODO:
-# check lang!!!! (find_lang karamba --with-kde doesn't work) chgw why?
-
 Summary:	Little interactive widgets on KDE desktop
 Summary(pl):	Ma³e interaktywne wid¿ety na pulpicie KDE
 Name:		superkaramba
@@ -254,12 +251,12 @@ install TubeClock/.directory $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba
 rm $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/PNM4/news/*/newstemp
 rm -frd $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/TubeClock/pics/.xvpics/
 
-#%find_lang karamba --with-kde
+%find_lang %{name} --with-kde
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
-#  -f karamba.lang
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %attr(755,root,root) %{_bindir}/superkaramba
