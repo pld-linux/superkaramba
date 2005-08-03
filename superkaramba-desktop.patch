@@ -1,32 +1,24 @@
---- src/karamba.desktop.old	2005-05-26 11:19:51.000000000 +0200
-+++ src/karamba.desktop		2005-05-26 11:21:28.000000000 +0200
-@@ -1,7 +1,12 @@
- [Desktop Entry]
- Encoding=UTF-8
- Name=SuperKaramba
-+Comment=An engine for cool desktop eyecandy
-+Comment[pl]=Silnik dla super wodotrysków na pulpit
- Exec=superkaramba
- Icon=clanbomber
-+Terminal=false
+--- superkaramba/src/superkaramba.desktop.old	2005-08-03 12:17:37.000000000 +0200
++++ superkaramba/src/superkaramba.desktop	2005-08-03 12:20:44.000000000 +0200
+@@ -6,13 +6,17 @@
+ Icon=superkaramba
  Type=Application
+ MimeType=application/x-superkaramba
 -Comment=An engine for cool desktop eyecandy.
+-Comment[et]=Vahva töölaualisanduse mootor.
+-Comment[pt]=Um motor para elementos no ecrã.
++Comment=An engine for cool desktop eyecandy
++Comment[et]=Vahva töölaualisanduse mootor
++Comment[pl]=Silnik dla super wodotrysków na pulpit
++Comment[pt]=Um motor para elementos no ecrã
+ Comment[sv]=Ett gränssnitt för häftigt ögongodis på skrivbordet
+-Comment[tr]=Masaüstü için güzel bir araç.
++Comment[tr]=Masaüstü için güzel bir araç
+ GenericName=Desktop Widgets
+ GenericName[et]=Töölauavidinad
+ GenericName[pt]=Elementos no Ecrã
+ GenericName[sv]=Skrivbordskomponenter
+ GenericName[tr]=Masaüstü Parçacıkları
++Terminal=false
 +OnlyShowIn=KDE
 +Categories=Application;KDE;Amusement;Applet;
-+# vi: encoding=utf-8
---- src/superkaramba.desktop.old	2005-05-26 11:19:37.000000000 +0200
-+++ src/superkaramba.desktop		2005-05-26 11:20:52.000000000 +0200
-@@ -1,7 +1,12 @@
- [Desktop Entry]
- Encoding=UTF-8
- Name=SuperKaramba
-+Comment=An engine for cool desktop eyecandy
-+Comment[pl]=Silnik dla super wodotrysków na pulpit
- Exec=superkaramba
- Icon=clanbomber
-+Terminal=false
- Type=Application
--Comment=An engine for cool desktop eyecandy.
-+OnlyShowIn=KDE
-+Categories=Application;KDE;Amusement;Applet;
-+# vi: encoding=utf-8
