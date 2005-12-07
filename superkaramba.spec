@@ -40,8 +40,8 @@ BuildRequires:	python-devel >= 2.2
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	xmms-devel
 Requires:	perl-libwww
-Obsoletes:      kdeutils-%{name}
-Obsoletes:	%{name}-theme-szPieG
+Obsoletes:	kdeutils-superkaramba
+Obsoletes:	superkaramba-theme-szPieG
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
