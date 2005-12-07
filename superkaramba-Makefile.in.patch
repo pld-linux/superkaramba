@@ -1,6 +1,6 @@
---- superkaramba/src/Makefile.in.orig	2005-07-08 04:40:59.000000000 +0200
-+++ superkaramba/src/Makefile.in	2005-08-03 12:36:45.000000000 +0200
-@@ -400,6 +400,7 @@
+--- superkaramba/src/Makefile.in.orig	2005-11-22 04:04:41.000000000 +0100
++++ superkaramba/src/Makefile.in	2005-12-03 23:24:13.678388632 +0100
+@@ -387,6 +387,7 @@
  kde_templatesdir = @kde_templatesdir@
  kde_wallpaperdir = @kde_wallpaperdir@
  kde_widgetdir = @kde_widgetdir@
@@ -8,8 +8,8 @@
  kdeinitdir = @kdeinitdir@
  libdir = @libdir@
  libexecdir = @libexecdir@
-@@ -481,7 +482,7 @@
- superkaramba_LDADD = -lkio $(LIB_KDEUI) $(XMMS_LDADD) $(LIBPYTHON) $(LIBKVM) $(LIB_KNEWSTUFF)
+@@ -467,7 +468,7 @@
+ superkaramba_LDADD = -lkio $(LIB_KDEUI) $(XMMS_LIBS) $(LIBPYTHON) $(LIBKVM) $(MY_LIBKNEWSTUFF)
  
  # this is where the desktop file will go
 -shelldesktopdir = $(kde_appsdir)/Utilities

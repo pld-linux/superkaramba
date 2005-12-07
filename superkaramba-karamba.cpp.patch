@@ -1,11 +1,11 @@
---- superkaramba/src/karamba.cpp.orig	2005-07-08 04:38:43.000000000 +0200
-+++ superkaramba/src/karamba.cpp	2005-08-03 12:42:04.000000000 +0200
-@@ -729,7 +729,7 @@
+--- superkaramba/src/karamba.cpp.orig	2005-11-22 04:03:13.000000000 +0100
++++ superkaramba/src/karamba.cpp	2005-12-03 23:27:56.472518776 +0100
+@@ -743,7 +743,7 @@
      {
        // Matthew Kay: set window type to "dock"
        // (plays better with taskbar themes this way)
 -      KWin::setType(winId(), NET::Dock);
-+      KWin::setType(winId(), NET::Normal);      
++      KWin::setType(winId(), NET::Normal);
  
        #if defined(KDE_MAKE_VERSION)
          #if KDE_VERSION >= KDE_MAKE_VERSION(3,1,9)
