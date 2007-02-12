@@ -1,5 +1,5 @@
 Summary:	Little interactive widgets on KDE desktop
-Summary(pl.UTF-8):   Małe interaktywne widżety na pulpicie KDE
+Summary(pl.UTF-8):	Małe interaktywne widżety na pulpicie KDE
 Name:		superkaramba
 Version:	0.39
 Release:	1
@@ -54,7 +54,7 @@ uruchamianie małych interaktywnych widżetów na pulpicie KDE.
 
 %package scripts
 Summary:	Scripts for superkaramba
-Summary(pl.UTF-8):   Skrypty dla widżetu superkaramba
+Summary(pl.UTF-8):	Skrypty dla widżetu superkaramba
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
@@ -66,7 +66,7 @@ Skrypty dla widżetu superkaramba.
 
 %package theme-OSXDocker
 Summary:	OSXDocker theme for %{name}
-Summary(pl.UTF-8):   Motyw OSXDocker dla widżetu %{name}
+Summary(pl.UTF-8):	Motyw OSXDocker dla widżetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -80,7 +80,7 @@ Motyw OSXDocker dla widżetu %{name}.
 
 %package theme-tuxbar
 Summary:	tuxbar theme for %{name}
-Summary(pl.UTF-8):   Motyw tuxbar dla widżetu %{name}
+Summary(pl.UTF-8):	Motyw tuxbar dla widżetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -94,7 +94,7 @@ Motyw tuxbar dla widżetu %{name}.
 
 %package theme-PNM4
 Summary:	Polish News Module 4 theme for %{name}
-Summary(pl.UTF-8):   Motyw Polish News Module 4 dla widżetu %{name}
+Summary(pl.UTF-8):	Motyw Polish News Module 4 dla widżetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -108,7 +108,7 @@ Motyw Polish News Module 4 dla widżetu %{name}.
 
 %package theme-TubeClock
 Summary:	TubeClock theme for %{name}
-Summary(pl.UTF-8):   Motyw zegara lampowego dla widżetu %{name}
+Summary(pl.UTF-8):	Motyw zegara lampowego dla widżetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
