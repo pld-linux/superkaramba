@@ -1,5 +1,5 @@
 Summary:	Little interactive widgets on KDE desktop
-Summary(pl):	Ma≥e interaktywne widøety na pulpicie KDE
+Summary(pl.UTF-8):   Ma≈Çe interaktywne wid≈ºety na pulpicie KDE
 Name:		superkaramba
 Version:	0.39
 Release:	1
@@ -48,25 +48,25 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 SuperKaramba is a tool that allows anyone to easily create and run
 little interactive widgets on a KDE desktop.
 
-%description -l pl
-SuperKaramba to narzÍdzie pozwalaj±ce na ≥atwe tworzenie i
-uruchamianie ma≥ych interaktywnych widøetÛw na pulpicie KDE.
+%description -l pl.UTF-8
+SuperKaramba to narzƒôdzie pozwalajƒÖce na ≈Çatwe tworzenie i
+uruchamianie ma≈Çych interaktywnych wid≈ºet√≥w na pulpicie KDE.
 
 %package scripts
 Summary:	Scripts for superkaramba
-Summary(pl):	Skrypty dla widøetu superkaramba
+Summary(pl.UTF-8):   Skrypty dla wid≈ºetu superkaramba
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
 %description scripts
 Scripts for superkaramba.
 
-%description scripts -l pl
-Skrypty dla widøetu superkaramba.
+%description scripts -l pl.UTF-8
+Skrypty dla wid≈ºetu superkaramba.
 
 %package theme-OSXDocker
 Summary:	OSXDocker theme for %{name}
-Summary(pl):	Motyw OSXDocker dla widøetu %{name}
+Summary(pl.UTF-8):   Motyw OSXDocker dla wid≈ºetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -75,12 +75,12 @@ Obsoletes:	superkaramba-themes-OSXDocker
 %description theme-OSXDocker
 OSXDocker theme for %{name}.
 
-%description theme-OSXDocker -l pl
-Motyw OSXDocker dla widøetu %{name}.
+%description theme-OSXDocker -l pl.UTF-8
+Motyw OSXDocker dla wid≈ºetu %{name}.
 
 %package theme-tuxbar
 Summary:	tuxbar theme for %{name}
-Summary(pl):	Motyw tuxbar dla widøetu %{name}
+Summary(pl.UTF-8):   Motyw tuxbar dla wid≈ºetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -89,12 +89,12 @@ Obsoletes:	superkaramba-themes-tuxbar
 %description theme-tuxbar
 tuxbar theme for %{name}.
 
-%description theme-tuxbar -l pl
-Motyw tuxbar dla widøetu %{name}.
+%description theme-tuxbar -l pl.UTF-8
+Motyw tuxbar dla wid≈ºetu %{name}.
 
 %package theme-PNM4
 Summary:	Polish News Module 4 theme for %{name}
-Summary(pl):	Motyw Polish News Module 4 dla widøetu %{name}
+Summary(pl.UTF-8):   Motyw Polish News Module 4 dla wid≈ºetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -103,12 +103,12 @@ Obsoletes:	superkaramba-themes-PNM4
 %description theme-PNM4
 Polish News Module 4 theme for %{name}.
 
-%description theme-PNM4 -l pl
-Motyw Polish News Module 4 dla widøetu %{name}.
+%description theme-PNM4 -l pl.UTF-8
+Motyw Polish News Module 4 dla wid≈ºetu %{name}.
 
 %package theme-TubeClock
 Summary:	TubeClock theme for %{name}
-Summary(pl):	Motyw zegara lampowego dla widøetu %{name}
+Summary(pl.UTF-8):   Motyw zegara lampowego dla wid≈ºetu %{name}
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-scripts = %{version}-%{release}
@@ -116,8 +116,8 @@ Requires:	%{name}-scripts = %{version}-%{release}
 %description theme-TubeClock
 Tube clock theme for %{name}.
 
-%description theme-TubeClock -l pl
-Motyw zegara lampowego dla widøetu %{name}.
+%description theme-TubeClock -l pl.UTF-8
+Motyw zegara lampowego dla wid≈ºetu %{name}.
 
 %prep
 %setup -q -a1 -a2 -a3 -a4 -a6
