@@ -147,19 +147,14 @@ moc superkaramba/src/karamba.h -o superkaramba/src/karamba.moc
 #%{__automake}
 #%{__make} -f Makefile.cvs
 
-CFLAGS="%{rpmcflags} -I/usr/include/python2.5 -I/usr/include/python2.4 -I/usr/include/python2.3"
-CXXFLAGS="%{rpmcflags} -I/usr/include/python2.5 -I/usr/include/python2.4 -I/usr/include/python2.3"
+CFLAGS="%{rpmcflags} -I%{py_incdir}"
+CXXFLAGS="%{rpmcflags} -I%{py_incdir}"
 LDFLAGS="%{rpmldflags} -lpython"
 export CFLAGS CXXFLAGS LDFLAGS
 %configure \
 	--with-qt-libraries=%{_libdir}
 
 %{__make}
-
-cd superkaramba
-%{__make} install \
-        DESTDIR=$RPM_BUILD_ROOT
-cd -
 
 %install
 rm -rf $RPM_BUILD_ROOT
