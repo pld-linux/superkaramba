@@ -121,10 +121,10 @@ Motyw zegara lampowego dla widżetu %{name}.
 
 %prep
 %setup -q -a1 -a2 -a3 -a4 -a6
-%patch0 -p0
+%patch -P0 -p0
 #%patch1 -p0
-%patch2 -p0
-%patch3 -p0
+%patch -P2 -p0
+%patch -P3 -p0
 
 #%{__perl} -pi -e "s@/home/maciunio/karamba/DynBar/script@%{_datadir}/themes/news_pl/script@" \
 #		news_pl.theme/*.theme
