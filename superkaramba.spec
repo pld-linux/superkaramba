@@ -122,7 +122,7 @@ Motyw zegara lampowego dla widżetu %{name}.
 %prep
 %setup -q -a1 -a2 -a3 -a4 -a6
 %patch -P0 -p0
-#%patch1 -p0
+#%%patch1 -p0
 %patch -P2 -p0
 %patch -P3 -p0
 
